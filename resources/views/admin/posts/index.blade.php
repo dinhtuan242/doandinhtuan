@@ -14,7 +14,7 @@
     <div class="block-header">
         <a href="{{route('admin.posts.create')}}" class="waves-effect waves-light btn right m-b-15 addbtn">
             <i class="material-icons left">add</i>
-            <span>CREATE </span>
+            <span>Thêm mới </span>
         </a>
     </div>
 
@@ -22,23 +22,22 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header">
-                    <h2>POST LIST</h2>
+                    <h2>Danh sách bài viết</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Image</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Category</th>
+                                    <th>STT</th>
+                                    <th>Ảnh mô tả</th>
+                                    <th>Tên bài viết</th>
+                                    <th>Tác giả</th>
+                                    <th>Thể loại</th>
                                     <th><i class="material-icons">visibility</i></th>
-                                    <th>Is Approved</th>
-                                    <th>Status</th>
-                                    <th><i class="material-icons small">comment</i></th>
-                                    <th width="150">Action</th>
+                                    <th>Trạng thái</th>
+                                    <th><i class="material-icons small">Số comment</i></th>
+                                    <th width="150">Hành động</th>
                                 </tr>
                             </thead>
 
@@ -48,12 +47,12 @@
                                     <td>{{$key+1}}</td>
                                     <td>
                                         @if(Storage::disk('public')->exists('posts/'.$post->image))
-                                            <img src="{{Storage::url('posts/'.$post->image)}}" alt="{{$post->title}}" class="img-responsive img-rounded">
+                                            <img src="{{Storage::url('posts/'.$post->image)}}" alt="{{$post->title}}" style="width: 200px" class="img-responsive img-rounded">
                                         @endif
                                     </td>
                                     <td>
                                         <span title="{{$post->title}}">
-                                            {{ str_limit($post->title,10) }}
+                                            {{ str_limit($post->title, 40) }}
                                         </span>
                                     </td>
                                     <td>{{$post->user->name}}</td>
@@ -67,17 +66,10 @@
                                     </td>
                                     <td>{{$post->view_count}}</td>
                                     <td>
-                                        @if($post->is_approved == true)
-                                            <span class="badge bg-green">Approved</span>
-                                        @else 
-                                            <span class="badge bg-pink">Pending</span>
-                                        @endif
-                                    </td>
-                                    <td>
                                         @if($post->status == true)
-                                            <span class="badge bg-green">Published</span>
+                                            <span class="badge bg-green">Công khai</span>
                                         @else 
-                                            <span class="badge bg-pink">Pending</span>
+                                            <span class="badge bg-pink">Đang chờ</span>
                                         @endif
                                     </td>
                                     <td>
@@ -87,7 +79,7 @@
                                         </span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{route('admin.posts.show',$post->slug)}}" class="btn btn-success btn-sm waves-effect">
+                                        <a href="{{route('blog.show',$post->slug)}}" target="_blank" class="btn btn-success btn-sm waves-effect">
                                             <i class="material-icons">visibility</i>
                                         </a>
                                         <a href="{{route('admin.posts.edit',$post->slug)}}" class="btn btn-info btn-sm waves-effect">

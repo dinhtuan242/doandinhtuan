@@ -69,15 +69,15 @@
                             <a class="btn-floating btn-small disabled"><i class="material-icons">star</i></a>
                         @endif
 
-                        <span class="btn btn-small disabled b-r-20">Bedroom: {{ $property->bedroom}} </span>
-                        <span class="btn btn-small disabled b-r-20">Bathroom: {{ $property->bathroom}} </span>
-                        <span class="btn btn-small disabled b-r-20">Area: {{ $property->area}} Sq Ft</span>
+                        <span class="btn btn-small disabled b-r-20">Phòng ngủ: {{ $property->bedroom}} </span>
+                        <span class="btn btn-small disabled b-r-20">Phòng tắm: {{ $property->bathroom}} </span>
+                        <span class="btn btn-small disabled b-r-20">Diện tích: {{ $property->area}} mét vuông</span>
                     </div>
                 </div>
                 <div class="col s12 m4">
                     <div>
-                        <h4 class="left">${{ $property->price }}</h4>
-                        <button type="button" class="btn btn-small m-t-25 right disabled b-r-20"> For {{ $property->purpose }}</button>
+                        <h4 class="left">{{ $property->price }} triệu đồng</h4>
+                        <button type="button" class="btn btn-small m-t-25 right disabled b-r-20"> Tài sản {{ $property->purpose }}</button>
                     </div>
                 </div>
             </div>
@@ -104,7 +104,7 @@
                     <div>
                         @if($property->features)
                             <ul class="collection with-header">
-                                <li class="collection-header grey lighten-4"><h5 class="m-0">Features</h5></li>
+                                <li class="collection-header grey lighten-4"><h5 class="m-0">Tính năng đặc biệt</h5></li>
                                 @foreach($property->features as $feature)
                                     <li class="collection-item">{{$feature->name}}</li>
                                 @endforeach
@@ -114,7 +114,7 @@
 
                     <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">Floor Plan</h5>
+                            <h5 class="m-0">Sơ đồ mặt bằng</h5>
                         </div>
                         <div class="card-image">
                             @if(Storage::disk('public')->exists('property/'.$property->floor_plan) && $property->floor_plan)
@@ -125,7 +125,7 @@
 
                     <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">Location</h5>
+                            <h5 class="m-0">Vị trí</h5>
                         </div>
                         <div class="card-image">
                             <div id="map"></div>
@@ -145,7 +145,7 @@
 
                     <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">Near By</h5>
+                            <h5 class="m-0">Gần với</h5>
                         </div>
                         <div class="single-narebay p-15">
                             {!! $property->nearby !!}
@@ -155,7 +155,7 @@
                     <div class="card-no-box-shadow card">
                         <div class="p-15 grey lighten-4">
                             <h5 class="m-0">
-                                {{ $property->comments_count }} Comments
+                                {{ $property->comments_count }} Bình luận
                                 @auth
                                 <div class="right" id="rateYo"></div>
                                 @endauth
@@ -176,7 +176,7 @@
                                                 <span class="time">{{ $comment->created_at->diffForHumans() }}</span>
 
                                                 @auth
-                                                    <span id="commentreplay" class="right replay" data-commentid="{{ $comment->id }}">Replay</span>
+                                                    <span id="commentreplay" class="right replay" data-commentid="{{ $comment->id }}">Trả lời</span>
                                                 @endauth
 
                                             </div>
@@ -209,7 +209,7 @@
 
                             @auth
                                 <div class="comment-box">
-                                    <h6>Leave a comment</h6>
+                                    <h6>Để lại bình luận</h6>
                                     <form action="{{ route('property.comment',$property->id) }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="parent" value="0">
@@ -222,8 +222,8 @@
 
                             @guest 
                                 <div class="comment-login">
-                                    <h6>Please Login to comment</h6>
-                                    <a href="{{ route('login') }}" class="btn indigo">Login</a>
+                                    <h6>Vui lòng đăng nhập để bình luận</h6>
+                                    <a href="{{ route('login') }}" class="btn indigo">Đăng nhập</a>
                                 </div>
                             @endguest
                             
@@ -239,7 +239,7 @@
                         <div>
                             <ul class="collection with-header m-t-0">
                                 <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Contact with Agent</h5>
+                                    <h5 class="m-0">Liên hệ với chủ nhà</h5>
                                 </li>
                                 <li class="collection-item p-0">
                                     @if($property->user)
@@ -256,7 +256,7 @@
                                         </div>
                                         <div class="p-l-10 p-r-10">
                                             <p>{{ $property->user->about }}</p>
-                                            <a href="{{ route('agents.show',$property->agent_id) }}" class="profile-link">Profile</a>
+                                            <a href="{{ route('agents.show',$property->agent_id) }}" class="profile-link">Thông tin</a>
                                         </div>
                                     @endif
                                 </li>
@@ -269,20 +269,20 @@
                                         <input type="hidden" name="property_id" value="{{ $property->id }}">
                                             
                                         <div class="box">
-                                            <input type="text" name="name" placeholder="Your Name">
+                                            <input type="text" name="name" placeholder="Họ tên"">
                                         </div>
                                         <div class="box">
-                                            <input type="email" name="email" placeholder="Your Email">
+                                            <input type="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="box">
-                                            <input type="number" name="phone" placeholder="Your Phone">
+                                            <input type="number" name="phone" placeholder="Điện thoại"">
                                         </div>
                                         <div class="box">
-                                            <textarea name="message" placeholder="Your Msssage"></textarea>
+                                            <textarea name="message" placeholder="Ghi chú""></textarea>
                                         </div>
                                         <div class="box">
                                             <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">
-                                                SEND
+                                                Đặt lịch
                                                 <i class="material-icons left">send</i>
                                             </button>
                                         </div>
@@ -294,7 +294,7 @@
                         <div>
                             <ul class="collection with-header">
                                 <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">City List</h5>
+                                    <h5 class="m-0">Danh sách thành phố</h5>
                                 </li>
                                 @foreach($cities as $city)
                                     <li class="collection-item p-0">
@@ -309,7 +309,7 @@
                         <div>
                             <ul class="collection with-header">
                                 <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Related Properties</h5>
+                                    <h5 class="m-0">Tài sản tương tự</h5>
                                 </li>
                                 @foreach($relatedproperty as $property_related)
                                     <li class="collection-item p-0">
@@ -372,7 +372,7 @@
                 
                 $.post( "{{ route('property.rating') }}", { rating: rating, property_id: property_id, user_id: user_id }, function( data ) {
                     if(data.rating.rating){
-                        M.toast({html: 'Rating: '+ data.rating.rating + ' added successfully.', classes:'green darken-4'})
+                        M.toast({html: 'Đánh giá: '+ data.rating.rating + ' sao thành công.', classes:'green darken-4'})
                     }
                 });
             });
@@ -391,8 +391,8 @@
                             <input type="hidden" name="parent" value="1">
                             <input type="hidden" name="parent_id" value="`+commentid+`">
                             
-                            <textarea name="body" class="box" placeholder="Leave a comment"></textarea>
-                            <input type="submit" class="btn indigo" value="Comment">
+                            <textarea name="body" class="box" placeholder="Để lại bình luận""></textarea>
+                            <input type="submit" class="btn indigo" value="Bình luận">
                         </form>
                     </div>`
                 );

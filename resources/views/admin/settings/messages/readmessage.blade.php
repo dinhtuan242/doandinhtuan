@@ -13,7 +13,7 @@
     <div class="block-header">
         <a href="{{route('admin.message')}}" class="waves-effect waves-light btn btn-danger right m-b-15">
             <i class="material-icons left">arrow_back</i>
-            <span>BACK</span>
+            <span>Quay lại</span>
         </a>
     </div>
 
@@ -21,20 +21,20 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>READ MESSAGE</h2>
+                    <h2>Chi tiết lịch hẹn</h2>
                 </div>
                 <div class="body">
-                    <h5>From: {{ $message->name }} <<em>{{ $message->email }}></em></h5>
+                    <h5>Từ: {{ $message->name }} <<em>{{ $message->email }}></em></h5>
                     <hr>
 
-                    <h5>Message</h5>
+                    <h5>Ghi chú</h5>
                     <p>{!! $message->message !!}</p>
                     <hr>
-
-                    <a href="{{route('admin.message.replay',$message->id)}}" class="btn btn-indigo btn-sm waves-effect">
-                        <i class="material-icons">replay</i>
-                        <span>Replay</span>
-                    </a>
+                    <h5>Số điện thoại</h5>
+                    <p>{{ $message->phone }}</p>
+                    <hr>
+                    <h5>Ngày tạo</h5>
+                    <p>{{ date_format($message->created_at, 'd-m-Y') }}</p>
 
                     <form class="right" action="{{route('admin.message.readunread')}}" method="POST">
                         @csrf
@@ -42,11 +42,12 @@
                         <input type="hidden" name="messageid" value="{{ $message->id }}">
 
                         <button type="submit" class="btn btn-warning btn-sm waves-effect">
-                            <i class="material-icons">local_library</i>
                             @if($message->status)
-                                <span>Unread</span>
+                                <i class="material-icons">close</i>
+                                <span>Chưa hoàn thành</span>
                             @else 
-                                <span>Read</span>
+                                <i class="material-icons">done</i>
+                                <span>Đã hoàn thành</span>
                             @endif
                         </button>
                     </form>

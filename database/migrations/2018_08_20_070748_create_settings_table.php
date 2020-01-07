@@ -19,7 +19,6 @@ class CreateSettingsTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->string('address');
-            $table->string('footer');
             $table->text('aboutus');
             $table->string('facebook');
             $table->string('twitter');

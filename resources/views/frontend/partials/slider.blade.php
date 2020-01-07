@@ -10,8 +10,8 @@
         @endforeach
     @else 
         <div class="carousel-item amber indigo-text" style="background-image: url({{ asset('frontend/images/real_estate.jpg') }})" href="#1!">
-            <h2>Slider Title goes here</h2>
-            <p class="indigo-text">Slider description goes here</p>
+            <h2>Tiêu đề</h2>
+            <p class="indigo-text">Mô tả</p>
         </div>
     @endif
 </section>

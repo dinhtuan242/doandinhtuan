@@ -21,74 +21,75 @@
         <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>Edit PROPERTY</h2>
+                    <h2>Sửa tài sản</h2>
                 </div>
                 <div class="body">
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" name="title" class="form-control" value="{{$property->title}}">
-                            <label class="form-label">Property Title</label>
+                            <label class="form-label">Tên tài sản</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" name="price" class="form-control" value="{{$property->price}}" required>
-                            <label class="form-label">Price</label>
+                            <label class="form-label">Giá</label>
                         </div>
+                        <div class="help-info">Triệu đồng</div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="bedroom" value="{{$property->bedroom}}" required>
-                            <label class="form-label">Bedroom</label>
+                            <label class="form-label">Số phòng ngủ</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="bathroom" value="{{$property->bathroom}}" required>
-                            <label class="form-label">Bathroom</label>
+                            <label class="form-label">Số phòng tắm</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="city" value="{{$property->city}}" required>
-                            <label class="form-label">City</label>
+                            <label class="form-label">Thành phố</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="address" value="{{$property->address}}" required>
-                            <label class="form-label">Address</label>
+                            <label class="form-label">Địa chỉ</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="area" value="{{$property->area}}" required>
-                            <label class="form-label">Area</label>
+                            <label class="form-label">Diện tích</label>
                         </div>
-                        <div class="help-info">Square Feet</div>
+                        <div class="help-info">Mét vuông</div>
                     </div>
 
                     <div class="form-group">
                         <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" {{ $property->featured ? 'checked' : '' }}/>
-                        <label for="featured">Featured</label>
+                        <label for="featured">Tính năng đặc biệt</label>
                     </div>
 
                     <hr>
                     <div class="form-group">
-                        <label for="tinymce">Description</label>
+                        <label for="tinymce">Mô tả</label>
                         <textarea name="description" id="tinymce">{{$property->description}}</textarea>
                     </div>
 
                     <hr>
                     <div class="form-group">
-                        <label for="tinymce-nearby">Nearby</label>
+                        <label for="tinymce-nearby">Gần với khu vực</label>
                         <textarea name="nearby" id="tinymce-nearby">{{$property->nearby}}</textarea>
                     </div>
 
@@ -97,7 +98,7 @@
 
             <div class="card">
                 <div class="header bg-red">
-                    <h2>GALLERY IMAGE</h2>
+                    <h2>Thư viện ảnh</h2>
                 </div>
                 <div class="body">
                     <div class="gallery-box" id="gallerybox">
@@ -111,7 +112,7 @@
                     <div class="gallery-box">
                         <hr>
                         <input type="file" name="gallaryimage[]" value="UPLOAD" id="gallaryimageupload" multiple>
-                        <button type="button" class="btn btn-info btn-lg right" id="galleryuploadbutton">UPLOAD GALLERY IMAGE</button>
+                        <button type="button" class="btn btn-info btn-lg right" id="galleryuploadbutton">Tải ảnh lên</button>
                     </div>
                 </div>
             </div>
@@ -120,33 +121,33 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>SELECT</h2>
+                    <h2>Lựa chọn</h2>
                 </div>
                 <div class="body">
 
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('purpose') ? 'focused error' : ''}}">
-                            <label>Select Purpose</label>
+                            <label>Kiểu tài sản</label>
                             <select name="purpose" class="form-control show-tick">
-                                <option value="">-- Please select --</option>
-                                <option value="sale" {{ $property->purpose=='sale' ? 'selected' : '' }}>Sale</option>
-                                <option value="rent" {{ $property->purpose=='rent' ? 'selected' : '' }}>Rent</option>
+                                <option value="">-- Chọn một --</option>
+                                <option value="sale" {{ $property->purpose=='sale' ? 'selected' : '' }}>Bán</option>
+                                <option value="rent" {{ $property->purpose=='rent' ? 'selected' : '' }}>Cho thuê</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('type') ? 'focused error' : ''}}">
-                            <label>Select type</label>
+                            <label>Loại tài sản</label>
                             <select name="type" class="form-control show-tick">
-                                <option value="">-- Please select --</option>
-                                <option value="house" {{ $property->type=='house' ? 'selected' : '' }}>House</option>
-                                <option value="apartment" {{ $property->type=='apartment' ? 'selected' : '' }}>Apartment</option>
+                                <option value="">-- Chọn một --</option>
+                                <option value="house" {{ $property->type=='house' ? 'selected' : '' }}>Nhà</option>
+                                <option value="apartment" {{ $property->type=='apartment' ? 'selected' : '' }}>Căn hộ</option>
                             </select>
                         </div>
                     </div>
 
-                    <h5>Features</h5>
+                    <h5>Tính năng khác</h5>
                     <div class="form-group demo-checkbox">
                         @foreach($features as $feature)
                             <input type="checkbox" id="features-{{$feature->id}}" name="features[]" class="filled-in chk-col-indigo" value="{{$feature->id}}" 
@@ -163,13 +164,13 @@
                         <div class="form-group">
                             <div class="form-line">
                                 <input type="text" name="location_latitude" class="form-control" value="{{$property->location_latitude}}" required/>
-                                <label class="form-label">Latitude</label>
+                                <label class="form-label">Vĩ độ</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-line">
                                 <input type="text" name="location_longitude" class="form-control" value="{{$property->location_longitude}}" required/>
-                                <label class="form-label">Longitude</label>
+                                <label class="form-label">Kinh độ</label>
                             </div>
                         </div>
                     </div>
@@ -179,7 +180,7 @@
 
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>PROPERTY VIDEO</h2>
+                    <h2>Video của tài sản</h2>
                 </div>
                 <div class="body">
                     <div class="form-group form-float">
@@ -197,7 +198,7 @@
 
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>FLOOR PLAN</h2>
+                    <h2>Sơ đồ mặt bằng</h2>
                 </div>
                 <div class="body">
                     <div class="form-group">
@@ -211,7 +212,7 @@
 
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>FEATURED IMAGE</h2>
+                    <h2>Ảnh mô tả</h2>
                 </div>
                 <div class="body">
 
@@ -225,12 +226,12 @@
                     {{-- BUTTON --}}
                     <a href="{{route('admin.properties.index')}}" class="btn btn-danger btn-lg m-t-15 waves-effect">
                         <i class="material-icons left">arrow_back</i>
-                        <span>BACK</span>
+                        <span>Quay lại</span>
                     </a>
 
                     <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
                         <i class="material-icons">save</i>
-                        <span>SAVE</span>
+                        <span>Cập nhật</span>
                     </button>
 
                 </div>

@@ -16,7 +16,7 @@
         <div class="col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>MESSAGES</h2>
+                    <h2>Danh sách lịch hẹn</h2>
                 </div>
                 <div class="body">
 
@@ -24,12 +24,13 @@
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Name</th>
+                                    <th>STT</th>
+                                    <th>Tên người yêu cầu</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Message</th>
-                                    <th width="150px">Action</th>
+                                    <th>Điện thoại</th>
+                                    <th>Ghi chú</th>
+                                    <th>Ngày tạo</th>
+                                    <th width="150px">Hành động</th>
                                 </tr>
                             </thead>
 
@@ -41,19 +42,17 @@
                                     <td>{{$message->email}}</td>
                                     <td>{{$message->phone}}</td>
                                     <td>{{ str_limit($message->message,40,'...') }}</td>
+                                    <td>{{ date_format($message->created_at, 'd-m-Y') }}</td>
                                     <td>
                                         @if($message->status == 0)
                                             <a href="{{route('admin.message.read',$message->id)}}" class="btn btn-warning btn-sm waves-effect">
-                                                <i class="material-icons">local_library</i>
+                                                <i class="material-icons">visibility</i>
                                             </a>
                                         @else 
                                             <a href="{{route('admin.message.read',$message->id)}}" class="btn btn-success btn-sm waves-effect">
                                                 <i class="material-icons">done</i>
                                             </a>
                                         @endif
-                                        <a href="{{route('admin.message.replay',$message->id)}}" class="btn btn-indigo btn-sm waves-effect">
-                                            <i class="material-icons">replay</i>
-                                        </a>
                                         <button type="button" class="btn btn-danger btn-sm waves-effect" onclick="deleteMessage({{$message->id}})">
                                             <i class="material-icons">delete</i>
                                         </button>
@@ -97,19 +96,19 @@
         function deleteMessage(id){
             
             swal({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Cảnh báo',
+            text: "Bạn có chắc muốn xóa?",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Ok'
             }).then((result) => {
                 if (result.value) {
                     document.getElementById('del-message-'+id).submit();
                     swal(
-                    'Deleted!',
-                    'Message has been deleted.',
+                    'Xóa thành công',
+                    'Đã xóa lịch hẹn thành công',
                     'success'
                     )
                 }

@@ -11,7 +11,6 @@ class Setting extends Model
         'email',
         'phone',
         'address',
-        'footer',
         'aboutus',
         'facebook',
         'twitter',

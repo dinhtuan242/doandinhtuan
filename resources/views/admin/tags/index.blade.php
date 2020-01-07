@@ -14,7 +14,7 @@
     <div class="block-header">
         <a href="{{route('admin.tags.create')}}" class="waves-effect waves-light btn right m-b-15 addbtn">
             <i class="material-icons left">add</i>
-            <span>CREATE </span>
+            <span>Thêm mới </span>
         </a>
     </div>
 
@@ -22,27 +22,27 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header">
-                    <h2>TAG LIST</h2>
+                    <h2>Danh sách thẻ tag</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Name</th>
-                                    <th>Post Count</th>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>Số bài viết</th>
                                     <th>Slug</th>
-                                    <th>Action</th>
+                                    <th>Hành động</th>
                                 </tr>
                             </thead>
                             <tfoot>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Name</th>
-                                    <th>Post Count</th>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>Số bài viết</th>
                                     <th>Slug</th>
-                                    <th>Action</th>
+                                    <th>Hành động</th>
                                 </tr>
                             </tfoot>
                             <tbody>
@@ -97,19 +97,19 @@
         function deleteTag(id){
             
             swal({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Cảnh báo',
+            text: "Bạn có chắc chắn muốn xóa?",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Ok'
             }).then((result) => {
                 if (result.value) {
                     document.getElementById('del-tag-'+id).submit();
                     swal(
-                    'Deleted!',
-                    'Tag has been deleted.',
+                    'Xóa thành công',
+                    'Đã xóa thẻ tag',
                     'success'
                     )
                 }

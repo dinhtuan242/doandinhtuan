@@ -10,7 +10,7 @@
         <div class="container">
             
             <div class="row">
-                <h4 class="section-heading">Properties</h4>
+                <h4 class="section-heading">Tài sản</h4>
             </div>
 
             <div class="row">
@@ -66,22 +66,22 @@
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
+                                    {{ $property->price }} triệu đồng
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>                                
                             </div>
                             <div class="card-action property-action">
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Bedroom: <strong>{{ $property->bedroom}}</strong> 
+                                    Phòng ngủ: <strong>{{ $property->bedroom}}</strong> 
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Bathroom: <strong>{{ $property->bathroom}}</strong> 
+                                    Phòng tắm: <strong>{{ $property->bathroom}}</strong> 
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Area: <strong>{{ $property->area}}</strong> Square Feet
+                                    Diện tích: <strong>{{ $property->area}}</strong> mét vuông
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">comment</i> 

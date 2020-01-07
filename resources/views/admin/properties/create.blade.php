@@ -20,74 +20,75 @@
         <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>CREATE PROPERTY</h2>
+                    <h2>Tạo tài sản</h2>
                 </div>
                 <div class="body">
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" name="title" class="form-control" value="{{old('title')}}">
-                            <label class="form-label">Property Title</label>
+                            <label class="form-label">Tên tài sản</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="price" required>
-                            <label class="form-label">Price</label>
+                            <label class="form-label">Giá</label>
                         </div>
+                        <div class="help-info">Triệu đồng</div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="bedroom" required>
-                            <label class="form-label">Bedroom</label>
+                            <label class="form-label">Số phòng ngủ</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="bathroom" required>
-                            <label class="form-label">Bathroom</label>
+                            <label class="form-label">Số phòng tắm</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="city" required>
-                            <label class="form-label">City</label>
+                            <label class="form-label">Tỉnh</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="address" required>
-                            <label class="form-label">Address</label>
+                            <label class="form-label">Địa chỉ cụ thể</label>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="number" class="form-control" name="area" required>
-                            <label class="form-label">Area</label>
+                            <label class="form-label">Diện tích</label>
                         </div>
-                        <div class="help-info">Square Feet</div>
+                        <div class="help-info">mét vuông</div>
                     </div>
 
                     <div class="form-group">
                         <input type="checkbox" id="featured" name="featured" class="filled-in" value="1" />
-                        <label for="featured">Featured</label>
+                        <label for="featured">Tính năng đặc biệt</label>
                     </div>
 
                     <hr>
                     <div class="form-group">
-                        <label for="tinymce">Description</label>
+                        <label for="tinymce">Mô tả</label>
                         <textarea name="description" id="tinymce">{{old('description')}}</textarea>
                     </div>
 
                     <hr>
                     <div class="form-group">
-                        <label for="tinymce-nearby">Nearby</label>
+                        <label for="tinymce-nearby">Gần với khu vực</label>
                         <textarea name="nearby" id="tinymce-nearby">{{old('nearby')}}</textarea>
                     </div>
 
@@ -95,7 +96,7 @@
             </div>
             <div class="card">
                 <div class="header">
-                    <h2>GALLERY IMAGE</h2>
+                    <h2>Thư viện ảnh</h2>
                 </div>
                 <div class="body">
                     <input id="input-id" type="file" name="gallaryimage[]" class="file" data-preview-file-type="text" multiple>
@@ -105,33 +106,33 @@
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>SELECT</h2>
+                    <h2>Lựa chọn</h2>
                 </div>
                 <div class="body">
 
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('purpose') ? 'focused error' : ''}}">
-                            <label>Select Purpose</label>
+                            <label>Kiểu tài sản</label>
                             <select name="purpose" class="form-control show-tick">
-                                <option value="">-- Please select --</option>
-                                <option value="sale">Sale</option>
-                                <option value="rent">Rent</option>
+                                <option value="">-- Chọn một --</option>
+                                <option value="sale">Bán</option>
+                                <option value="rent">Cho thuê</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group form-float">
                         <div class="form-line {{$errors->has('type') ? 'focused error' : ''}}">
-                            <label>Select type</label>
+                            <label>Loại tài sản</label>
                             <select name="type" class="form-control show-tick">
-                                <option value="">-- Please select --</option>
-                                <option value="house">House</option>
-                                <option value="apartment">Apartment</option>
+                                <option value="">-- Chọn một --</option>
+                                <option value="house">Nhà</option>
+                                <option value="apartment">Căn hộ</option>
                             </select>
                         </div>
                     </div>
 
-                    <h5>Features</h5>
+                    <h5>Tính năng khác</h5>
                     <div class="form-group demo-checkbox">
                         @foreach($features as $feature)
                             <input type="checkbox" id="features-{{$feature->id}}" name="features[]" class="filled-in chk-col-indigo" value="{{$feature->id}}" />
@@ -142,7 +143,7 @@
                     <div class="form-group form-float">
                         <div class="form-line">
                             <input type="text" class="form-control" name="video">
-                            <label class="form-label">Video</label>
+                            <label class="form-label">Link video</label>
                         </div>
                         <div class="help-info">Youtube Link</div>
                     </div>
@@ -152,13 +153,13 @@
                         <div class="form-group">
                             <div class="form-line">
                                 <input type="text" name="location_latitude" class="form-control" required/>
-                                <label class="form-label">Latitude</label>
+                                <label class="form-label">Vĩ độ</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="form-line">
                                 <input type="text" name="location_longitude" class="form-control" required/>
-                                <label class="form-label">Longitude</label>
+                                <label class="form-label">Kinh độ</label>
                             </div>
                         </div>
                     </div>
@@ -167,7 +168,7 @@
             </div>
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>FLOOR PLAN</h2>
+                    <h2>Sơ đồ mặt bằng</h2>
                 </div>
                 <div class="body">
                     <div class="form-group">
@@ -177,7 +178,7 @@
             </div>
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>FEATURED IMAGE</h2>
+                    <h2>Ảnh mô tả</h2>
                 </div>
                 <div class="body">
                     <div class="form-group">
@@ -187,12 +188,12 @@
                     {{-- BUTTON --}}
                     <a href="{{route('admin.properties.index')}}" class="btn btn-danger btn-lg m-t-15 waves-effect">
                         <i class="material-icons left">arrow_back</i>
-                        <span>BACK</span>
+                        <span>Quay lại</span>
                     </a>
 
                     <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
                         <i class="material-icons">save</i>
-                        <span>SAVE</span>
+                        <span>Lưu</span>
                     </button>
                 </div>
             </div>

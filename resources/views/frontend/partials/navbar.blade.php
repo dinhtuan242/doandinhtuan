@@ -7,7 +7,7 @@
                     @if(isset($navbarsettings[0]) && $navbarsettings[0]['name'])
                         {{ $navbarsettings[0]['name'] }}
                     @else
-                        Real State
+                        Rent and sale
                     @endif
                     <i class="material-icons left">location_city</i>
                 </a>
@@ -17,27 +17,19 @@
                 
                 <ul class="right hide-on-med-and-down">
                     <li class="{{ Request::is('/') ? 'active' : '' }}">
-                        <a href="{{ route('home') }}">Home</a>
+                        <a href="{{ route('home') }}">Trang chủ</a>
                     </li>
 
                     <li class="{{ Request::is('property*') ? 'active' : '' }}">
-                        <a href="{{ route('property') }}">Properties</a>
+                        <a href="{{ route('property') }}">Tài sản</a>
                     </li>
 
                     <li class="{{ Request::is('agents*') ? 'active' : '' }}">
-                        <a href="{{ route('agents') }}">Agents</a>
-                    </li>
-
-                    <li class="{{ Request::is('gallery') ? 'active' : '' }}">
-                        <a href="{{ route('gallery') }}">Gallery</a>
+                        <a href="{{ route('agents') }}">Chủ nhà</a>
                     </li>
 
                     <li class="{{ Request::is('blog*') ? 'active' : '' }}">
-                        <a href="{{ route('blog') }}">Blog</a>
-                    </li>
-
-                    <li class="{{ Request::is('contact') ? 'active' : '' }}">
-                        <a href="{{ route('contact') }}">Contact</a>
+                        <a href="{{ route('blog') }}">Tin tức</a>
                     </li>
 
                     @guest
@@ -55,15 +47,15 @@
                             <li>
                                 @if(Auth::user()->role->id == 1)
                                     <a href="{{ route('admin.dashboard') }}" class="indigo-text">
-                                        <i class="material-icons">person</i>Profile
+                                        <i class="material-icons">person</i>Thông tin
                                     </a>
                                 @elseif(Auth::user()->role->id == 2)
                                     <a href="{{ route('agent.dashboard') }}" class="indigo-text">
-                                        <i class="material-icons">person</i>Profile
+                                        <i class="material-icons">person</i>Thông tin
                                     </a>
                                 @elseif(Auth::user()->role->id == 3)
                                     <a href="{{ route('user.dashboard') }}" class="indigo-text">
-                                        <i class="material-icons">person</i>Profile
+                                        <i class="material-icons">person</i>Thông tin
                                     </a>
                                 @endif
                             </li>
@@ -88,27 +80,19 @@
     
     <ul class="sidenav" id="mobile-demo">
         <li class="{{ Request::is('/') ? 'active' : '' }}">
-            <a href="{{ route('home') }}">Home</a>
+            <a href="{{ route('home') }}">Trang chủ</a>
         </li>
 
         <li class="{{ Request::is('property*') ? 'active' : '' }}">
-            <a href="{{ route('property') }}">Properties</a>
+            <a href="{{ route('property') }}">Tài sản</a>
         </li>
 
         <li class="{{ Request::is('agents*') ? 'active' : '' }}">
-            <a href="{{ route('agents') }}">Agents</a>
-        </li>
-
-        <li class="{{ Request::is('gallery') ? 'active' : '' }}">
-            <a href="{{ route('gallery') }}">Gallery</a>
+            <a href="{{ route('agents') }}">Chủ nhà</a>
         </li>
 
         <li class="{{ Request::is('blog*') ? 'active' : '' }}">
-            <a href="{{ route('blog') }}">Blog</a>
-        </li>
-
-        <li class="{{ Request::is('contact') ? 'active' : '' }}">
-            <a href="{{ route('contact') }}">Contact</a>
+            <a href="{{ route('blog') }}">Bài viết</a>
         </li>
     </ul>
 

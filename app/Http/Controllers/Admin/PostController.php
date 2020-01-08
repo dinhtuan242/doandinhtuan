@@ -52,7 +52,6 @@ class PostController extends Controller
             }
             $postimage = Image::make($image)->resize(1600, 980)->save();
             Storage::disk('public')->put('posts/' . $imagename, $postimage);
-
         } else {
             $imagename = 'default.png';
         }
@@ -74,14 +73,6 @@ class PostController extends Controller
 
         Toastr::success('message', 'Post created successfully.');
         return redirect()->route('admin.posts.index');
-
-    }
-
-    public function show(Post $post)
-    {
-        $post = Post::withCount('comments')->find($post->id);
-
-        return view('admin.posts.show', compact('post'));
     }
 
     public function edit(Post $post)
@@ -122,7 +113,6 @@ class PostController extends Controller
             }
             $postimage = Image::make($image)->resize(1600, 980)->save();
             Storage::disk('public')->put('posts/' . $imagename, $postimage);
-
         } else {
             $imagename = $post->image;
         }

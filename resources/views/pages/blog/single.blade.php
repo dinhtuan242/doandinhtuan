@@ -54,7 +54,7 @@
 
                     <div class="card" id="comments">
                         <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">{{ $post->comments_count }} Comments</h5>
+                            <h5 class="m-0">{{ $post->comments_count }} Bình luận</h5>
                         </div>
                         <div class="single-narebay p-15">
 
@@ -71,7 +71,7 @@
                                                 <span class="time">{{ $comment->created_at->diffForHumans() }}</span>
 
                                                 @auth
-                                                    <span class="right replay" data-commentid="{{ $comment->id }}">Replay</span>
+                                                    <span class="right replay" data-commentid="{{ $comment->id }}">Trả lời</span>
                                                 @endauth
 
                                             </div>
@@ -106,7 +106,7 @@
 
                             @auth
                                 <div class="comment-box">
-                                    <h6>Leave a comment</h6>
+                                    <h6>Để lại bình luận</h6>
                                     <form action="{{ route('blog.comment',$post->id) }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="parent" value="0">
@@ -119,8 +119,8 @@
 
                             @guest 
                                 <div class="comment-login">
-                                    <h6>Please Login to comment</h6>
-                                    <a href="{{ route('login') }}" class="btn indigo">Login</a>
+                                    <h6>Vui lòng đăng nhập để bình luận</h6>
+                                    <a href="{{ route('login') }}" class="btn indigo">Đăng nhập</a>
                                 </div>
                             @endguest
                             

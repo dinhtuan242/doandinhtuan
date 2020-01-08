@@ -60,7 +60,6 @@ class DashboardController extends Controller
             'email' => 'required',
             'phone' => 'required',
             'address' => 'required',
-            'footer' => 'required',
             'aboutus' => 'required',
             'facebook' => 'required|url',
             'twitter' => 'required|url',
@@ -74,7 +73,6 @@ class DashboardController extends Controller
                 'email' => $request->email,
                 'phone' => $request->phone,
                 'address' => $request->address,
-                'footer' => $request->footer,
                 'aboutus' => $request->aboutus,
                 'facebook' => $request->facebook,
                 'twitter' => $request->twitter,
@@ -179,13 +177,6 @@ class DashboardController extends Controller
         $message = Message::findOrFail($id);
 
         return view('admin.settings.messages.readmessage', compact('message'));
-    }
-
-    public function messageReplay($id)
-    {
-        $message = Message::findOrFail($id);
-
-        return view('admin.settings.messages.replaymessage', compact('message'));
     }
 
     public function messageSend(Request $request)

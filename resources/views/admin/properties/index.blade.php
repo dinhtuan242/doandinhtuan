@@ -14,7 +14,7 @@
     <div class="block-header">
         <a href="{{route('admin.properties.create')}}" class="waves-effect waves-light btn right m-b-15 addbtn">
             <i class="material-icons left">add</i>
-            <span>CREATE </span>
+            <span>Thêm mới </span>
         </a>
     </div>
 
@@ -22,24 +22,24 @@
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
                 <div class="header bg-indigo">
-                    <h2>PROPERTY LIST</h2>
+                    <h2>Danh sách tài sản</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover dataTable js-exportable">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Image</th>
-                                    <th>Title</th>
-                                    <th>Author</th>
-                                    <th>Type</th>
-                                    <th>Purpose</th>
-                                    <th>Beds</th>
-                                    <th>Baths</th>
+                                    <th>STT</th>
+                                    <th>Hình ảnh</th>
+                                    <th>Tên tài sản</th>
+                                    <th>Tác giả</th>
+                                    <th>Loại tài sản</th>
+                                    <th>Kiểu tài sản</th>
+                                    <th>Số phòng ngủ</th>
+                                    <th>Số phòng tắm</th>
                                     <th><i class="material-icons small">comment</i></th>
                                     <th><i class="material-icons small">stars</i></th>
-                                    <th width="150">Action</th>
+                                    <th width="150">Hành động</th>
                                 </tr>
                             </thead>
 
@@ -74,7 +74,7 @@
                                     </td>
 
                                     <td class="text-center">
-                                        <a href="{{route('admin.properties.show',$property->slug)}}" class="btn btn-success btn-sm waves-effect">
+                                        <a href="{{route('property.show',$property->slug)}}" target="_blank" class="btn btn-success btn-sm waves-effect">
                                             <i class="material-icons">visibility</i>
                                         </a>
                                         <a href="{{route('admin.properties.edit',$property->slug)}}" class="btn btn-info btn-sm waves-effect">
@@ -121,19 +121,19 @@
         function deletePost(id){
             
             swal({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Cảnh báo',
+            text: "Bạn có chắc chắn muốn xóa tài sản này?",
             type: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes, delete it!'
+            confirmButtonText: 'Ok'
             }).then((result) => {
                 if (result.value) {
                     document.getElementById('del-post-'+id).submit();
                     swal(
-                    'Deleted!',
-                    'Post has been deleted.',
+                    'Xóa thành công',
+                    'Tài sản đã được xóa',
                     'success'
                     )
                 }

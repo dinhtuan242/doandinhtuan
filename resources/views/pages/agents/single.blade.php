@@ -27,7 +27,7 @@
                         </div>
                     </div>
 
-                    <h5 class="uppercase">Property List of {{ $agent->name }}</h5>
+                    <h5 class="uppercase">Danh sách tài sản của {{ $agent->name }}</h5>
 
                     {{-- AGENT PROPERTIES --}}
                     @foreach($properties as $property)
@@ -42,7 +42,7 @@
                                         <a href="{{ route('property.show',$property->slug) }}">{{ str_limit($property->title,25) }}</a>
                                     </span>
                                     <h5>
-                                        &dollar;{{ $property->price }}
+                                        {{ $property->price }} triệu đồng
                                         <small class="right p-r-10">{{ $property->type }} for {{ $property->purpose }}</small>
                                     </h5>
                                 </div>
@@ -50,15 +50,15 @@
                                 <div class="card-action property-action">
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
-                                        Beds: <strong>{{ $property->bedroom}}</strong> 
+                                        Phòng ngủ: <strong>{{ $property->bedroom}}</strong> 
                                     </span>
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
-                                        Baths: <strong>{{ $property->bathroom}}</strong> 
+                                        Phòng tắm: <strong>{{ $property->bathroom}}</strong> 
                                     </span>
                                     <span class="btn-flat">
                                         <i class="material-icons">check_box</i>
-                                        Area: <strong>{{ $property->area}}</strong> Sq Ft
+                                        Diện tích: <strong>{{ $property->area}}</strong> mét vuông
                                     </span>
                                     
                                     @if($property->featured == 1)
@@ -84,7 +84,7 @@
                         <div>
                             <ul class="collection with-header m-t-0">
                                 <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Contact with Agent</h5>
+                                    <h5 class="m-0">Đặt lịch hẹn với chủ nhà</h5>
                                 </li>
                                 <li class="collection agent-message">
                                     <form class="agent-message-box" action="" method="POST">
@@ -93,20 +93,20 @@
                                         <input type="hidden" name="user_id" value="{{ auth()->id() }}">
                                             
                                         <div class="box">
-                                            <input type="text" name="name" placeholder="Your Name">
+                                            <input type="text" name="name" placeholder="Tên của bạn"">
                                         </div>
                                         <div class="box">
-                                            <input type="email" name="email" placeholder="Your Email">
+                                            <input type="email" name="email" placeholder="Email">
                                         </div>
                                         <div class="box">
-                                            <input type="number" name="phone" placeholder="Your Phone">
+                                            <input type="number" name="phone" placeholder="Điện thoại">
                                         </div>
                                         <div class="box">
-                                            <textarea name="message" placeholder="Your Msssage"></textarea>
+                                            <textarea name="message" placeholder="Ghi chú"></textarea>
                                         </div>
                                         <div class="box">
                                             <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">
-                                                SEND
+                                                Đặt lịch
                                                 <i class="material-icons left">send</i>
                                             </button>
                                         </div>

@@ -13,10 +13,10 @@
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="info-box bg-pink hover-expand-effect">
                 <div class="icon">
-                    <i class="material-icons">playlist_add_check</i>
+                    <i class="material-icons">home</i>
                 </div>
                 <div class="content">
-                    <div class="text">TOTAL PROPERTY</div>
+                    <div class="text">TỔNG TÀI SẢN</div>
                     <div class="number count-to" data-from="0" data-to="{{ $propertycount }}" data-speed="15" data-fresh-interval="20"></div>
                 </div>
             </div>
@@ -24,10 +24,10 @@
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="info-box bg-cyan hover-expand-effect">
                 <div class="icon">
-                    <i class="material-icons">help</i>
+                    <i class="material-icons">event_note</i>
                 </div>
                 <div class="content">
-                    <div class="text">TOTAL POST</div>
+                    <div class="text">TỔNG BÀI VIẾT</div>
                     <div class="number count-to" data-from="0" data-to="{{ $postcount }}" data-speed="1000" data-fresh-interval="20"></div>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                     <i class="material-icons">forum</i>
                 </div>
                 <div class="content">
-                    <div class="text">TOTAL COMMENT</div>
+                    <div class="text">TỔNG SỐ COMMENT</div>
                     <div class="number count-to" data-from="0" data-to="{{ $commentcount }}" data-speed="1000" data-fresh-interval="20"></div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
                     <i class="material-icons">person_add</i>
                 </div>
                 <div class="content">
-                    <div class="text">TOTAL USER</div>
+                    <div class="text">TỔNG SỐ NGƯỜI DÙNG</div>
                     <div class="number count-to" data-from="0" data-to="{{ $usercount }}" data-speed="1000" data-fresh-interval="20"></div>
                 </div>
             </div>
@@ -62,19 +62,19 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="header">
-                    <h2>RECENT PROPERTIES</h2>
+                    <h2>Tài sản gần đây</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-hover dashboard-task-infos">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Title</th>
-                                    <th>Price</th>
-                                    <th>City</th>
+                                    <th>STT</th>
+                                    <th>Tên</th>
+                                    <th>Giá</th>
+                                    <th>Thành phố</th>
                                     <th><i class="material-icons small">star</i></th>
-                                    <th>Manager</th>
+                                    <th>Người đăng</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -86,7 +86,7 @@
                                             {{ str_limit($property->title, 10) }}
                                         </span>
                                     </td>
-                                    <td>&dollar;{{ $property->price }}</td>
+                                    <td>{{ $property->price }} triệu đồng</td>
                                     <td>{{ $property->city }}</td>
                                     <td>
                                         @if($property->featured == 1)
@@ -108,17 +108,17 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="header">
-                    <h2>RECENT POSTS</h2>
+                    <h2>Bài viết gần đây</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-hover dashboard-task-infos">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Title</th>
+                                    <th>STT</th>
+                                    <th>Tên</th>
                                     <th><i class="material-icons small">comment</i></th>
-                                    <th>Author</th>
+                                    <th>Tác giả</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -150,17 +150,17 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="header">
-                    <h2>USER LIST</h2>
+                    <h2>Danh sách user</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-hover dashboard-task-infos">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Name</th>
+                                    <th>STT</th>
+                                    <th>Tên</th>
                                     <th>Email</th>
-                                    <th>Role</th>
+                                    <th>Vai trò</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -184,18 +184,18 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <div class="card">
                 <div class="header">
-                    <h2>RECENT COMMENTS</h2>
+                    <h2>Comment gần đây</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-hover dashboard-task-infos">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Comment</th>
+                                    <th>STT</th>
+                                    <th>Nội dung</th>
                                     <th><i class="material-icons small">check</i></th>
-                                    <th>Author</th>
-                                    <th>Time</th>
+                                    <th>Người đăng</th>
+                                    <th>Thời gian</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -204,7 +204,7 @@
                                     <td>{{ ++$key }}.</td>
                                     <td>
                                         <span title="{{ $comment->body }}">
-                                            {{ str_limit($comment->body, 10) }}
+                                            {{ str_limit($comment->body, 20) }}
                                         </span>
                                     </td>
                                     <td>

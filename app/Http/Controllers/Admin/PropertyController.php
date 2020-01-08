@@ -62,7 +62,6 @@ class PropertyController extends Controller
             }
             $propertyimage = Image::make($image)->save();
             Storage::disk('public')->put('property/' . $imagename, $propertyimage);
-
         }
 
         $floor_plan = $request->file('floor_plan');
@@ -75,7 +74,6 @@ class PropertyController extends Controller
             }
             $propertyfloorplan = Image::make($floor_plan)->save();
             Storage::disk('public')->put('property/' . $imagefloorplan, $propertyfloorplan);
-
         } else {
             $imagefloorplan = 'default.png';
         }
@@ -129,15 +127,6 @@ class PropertyController extends Controller
 
         Toastr::success('message', 'Property created successfully.');
         return redirect()->route('admin.properties.index');
-    }
-
-    public function show(Property $property)
-    {
-        $property = Property::withCount('comments')->find($property->id);
-
-        $videoembed = $this->convertYoutube($property->video, 560, 315);
-
-        return view('admin.properties.show', compact('property', 'videoembed'));
     }
 
     public function edit(Property $property)

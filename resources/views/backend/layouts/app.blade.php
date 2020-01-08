@@ -52,7 +52,7 @@
                         </div>
                     </div>
                 </div>
-                <p>Please wait...</p>
+                <p>Chờ một lát...</p>
             </div>
         </div>
 

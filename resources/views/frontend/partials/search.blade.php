@@ -11,28 +11,28 @@
                     <div class="searchbar">
                         <div class="input-field col s12 m3">
                             <input type="text" name="city" id="autocomplete-input" class="autocomplete custominputbox" autocomplete="off">
-                            <label for="autocomplete-input">Enter City or State</label>
+                            <label for="autocomplete-input">Tên thành phố hoặc khu vực</label>
                         </div>
 
                         <div class="input-field col s12 m2">
                             <select name="type" class="browser-default">
-                                <option value="" disabled selected>Choose Type</option>
-                                <option value="apartment">Apartment</option>
-                                <option value="house">House</option>
+                                <option value="" disabled selected>Chọn loại tài sản</option>
+                                <option value="house">Nhà</option>
+                                <option value="apartment">Căn hộ</option>
                             </select>
                         </div>
 
                         <div class="input-field col s12 m2">
                             <select name="purpose" class="browser-default">
-                                <option value="" disabled selected>Purpose</option>
-                                <option value="rent">Rent</option>
-                                <option value="sale">Sale</option>
+                                <option value="" disabled selected>Chọn kiểu tài sản</option>
+                                <option value="sale">Bán</option>
+                                <option value="rent">Cho thuê</option>
                             </select>
                         </div>
 
                         <div class="input-field col s12 m2">
                             <select name="bedroom" class="browser-default">
-                                <option value="" disabled selected>Bedroom</option>
+                                <option value="" disabled selected>Số phòng ngủ</option>
                                 @if(isset($bedroomdistinct))
                                     @foreach($bedroomdistinct as $bedroom)
                                         <option value="{{$bedroom->bedroom}}">{{$bedroom->bedroom}}</option>
@@ -43,7 +43,7 @@
 
                         <div class="input-field col s12 m2">
                             <input type="text" name="maxprice" id="maxprice" class="custominputbox">
-                            <label for="maxprice">Max Price</label>
+                            <label for="maxprice">Giá</label>
                         </div>
                         
                         <div class="input-field col s12 m1">

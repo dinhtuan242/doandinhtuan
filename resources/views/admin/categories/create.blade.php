@@ -20,7 +20,7 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header">
+                <div class="header bg-teal">
                     <h2>Thêm thể loại tin tức</h2>
                 </div>
                 <div class="body">
@@ -38,7 +38,7 @@
                             <input type="file" name="image">
                         </div>
 
-                        <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
+                        <button type="submit" class="btn btn-teal btn-lg m-t-15 waves-effect">
                             <i class="material-icons">save</i>
                             <span>Lưu</span>
                         </button>

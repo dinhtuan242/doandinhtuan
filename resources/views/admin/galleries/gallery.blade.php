@@ -17,7 +17,7 @@
 
         <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>
                         GALLERY IMAGE
                         <a href="{{ route('admin.album') }}" class="right" title="Back"><i class="material-icons">undo</i></a>
@@ -39,7 +39,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>UPLOAD GALLERY IMAGE</h2>
                 </div>
                 <div class="body">
@@ -58,7 +58,7 @@
                         <input type="hidden" name="albumid" value="{{$album_id}}">
                     </form>
                     
-                    <a href="{{route('admin.album.gallery',$album_id)}}" class="btn btn-indigo btn-lg m-t-15 waves-effect" style="width:100%">
+                    <a href="{{route('admin.album.gallery',$album_id)}}" class="btn btn-teal btn-lg m-t-15 waves-effect" style="width:100%">
                         <i class="material-icons">refresh</i>
                         <span>Refresh</span>
                     </a>

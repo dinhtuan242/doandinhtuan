@@ -20,7 +20,7 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Chỉnh sửa phản hồi khách hàng</h2>
                 </div>
                 <div class="body">
@@ -55,7 +55,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
+                        <button type="submit" class="btn btn-teal btn-lg m-t-15 waves-effect">
                             <i class="material-icons">update</i>
                             <span>Cập nhật</span>
                         </button>

@@ -21,7 +21,7 @@
     <div class="row clearfix">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Danh sách tài sản</h2>
                 </div>
                 <div class="body">
@@ -64,12 +64,12 @@
                                     <td>{{$property->bathroom}}</td>
 
                                     <td>
-                                        <span class="badge bg-indigo">{{ $property->comments_count }}</span>
+                                        <span class="badge bg-teal">{{ $property->comments_count }}</span>
                                     </td>
 
                                     <td>
                                         @if($property->featured == true)
-                                            <span class="badge bg-indigo"><i class="material-icons small">star</i></span>
+                                            <span class="badge bg-teal"><i class="material-icons small">star</i></span>
                                         @endif
                                     </td>
 

@@ -14,7 +14,7 @@
     <div class="row clearfix">
         <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>ALBUM LIST</h2>
                 </div>
                 <div class="body">
@@ -23,7 +23,7 @@
                         <div class="col-md-6 col-sm-12 col-xs-12">
                             <div class="card mb0">
                                 <a href="{{ route('admin.album.gallery',$album->id) }}">
-                                    <div class="header bg-indigo">
+                                    <div class="header bg-teal">
                                         <h2>{{$album->name}}</h2>
                                     </div>
                                     <div class="body">
@@ -46,7 +46,7 @@
 
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>CREATE ALBUM</h2>
                 </div>
                 <div class="body">
@@ -59,7 +59,7 @@
                                 <label class="form-label">Album Name</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
+                        <button type="submit" class="btn btn-teal btn-lg m-t-15 waves-effect">
                             <i class="material-icons">save</i>
                             <span>SAVE</span>
                         </button>

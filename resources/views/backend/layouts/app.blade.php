@@ -32,12 +32,12 @@
     <link href="{{ asset('backend/css/main.css') }}" rel="stylesheet">
 
     <!-- AdminBSB Themes -->
-    <link href="{{ asset('backend/css/themes/theme-indigo.css') }}" rel="stylesheet" />
+    <link href="{{ asset('backend/css/themes/theme-teal.css') }}" rel="stylesheet" />
 
 
 </head>
 
-    <body class="theme-indigo">
+    <body class="theme-teal">
 
         <!-- Page Loader -->
         <div class="page-loader-wrapper">

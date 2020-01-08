@@ -23,9 +23,9 @@
 
                         <div class="row">
                             <div class="col s12">
-                                <div class="box indigo white-text p-30">
+                                <div class="box teal white-text p-30">
                                     <i class="material-icons left">comment</i>
-                                    <span class="truncate uppercase bold font-18">Comments</span>
+                                    <span class="truncate uppercase bold font-18">Số bình luận</span>
                                     <h4 class="m-t-10 m-b-0">{{ $commentcount }}</h4>
                                 </div>
                             </div>
@@ -33,9 +33,9 @@
 
                         <div class="row">
                             <div class="col s12">
-                                <div class="box indigo white-text p-20">
+                                <div class="box teal white-text p-20">
                                     <i class="material-icons left font-18">comment</i>
-                                    <span class="truncate uppercase bold">Recent Comments</span>
+                                    <span class="truncate uppercase bold">Bình luận gần đây</span>
                                 </div>
                                 <div class="box-content">
                                     @foreach($comments as $key => $comment)

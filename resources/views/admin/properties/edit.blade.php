@@ -20,7 +20,7 @@
         @method('PUT')
         <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Sửa tài sản</h2>
                 </div>
                 <div class="body">
@@ -97,7 +97,7 @@
             </div>
 
             <div class="card">
-                <div class="header bg-red">
+                <div class="header bg-teal">
                     <h2>Thư viện ảnh</h2>
                 </div>
                 <div class="body">
@@ -120,7 +120,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Lựa chọn</h2>
                 </div>
                 <div class="body">
@@ -150,7 +150,7 @@
                     <h5>Tính năng khác</h5>
                     <div class="form-group demo-checkbox">
                         @foreach($features as $feature)
-                            <input type="checkbox" id="features-{{$feature->id}}" name="features[]" class="filled-in chk-col-indigo" value="{{$feature->id}}" 
+                            <input type="checkbox" id="features-{{$feature->id}}" name="features[]" class="filled-in chk-col-teal" value="{{$feature->id}}" 
                             @foreach($property->features as $checked)
                                 {{ ($checked->id == $feature->id) ? 'checked' : '' }}
                             @endforeach
@@ -179,7 +179,7 @@
             </div>
 
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Video của tài sản</h2>
                 </div>
                 <div class="body">
@@ -197,7 +197,7 @@
             </div>
 
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Sơ đồ mặt bằng</h2>
                 </div>
                 <div class="body">
@@ -211,7 +211,7 @@
             </div>
 
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Ảnh mô tả</h2>
                 </div>
                 <div class="body">
@@ -229,7 +229,7 @@
                         <span>Quay lại</span>
                     </a>
 
-                    <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
+                    <button type="submit" class="btn btn-teal btn-lg m-t-15 waves-effect">
                         <i class="material-icons">save</i>
                         <span>Cập nhật</span>
                     </button>

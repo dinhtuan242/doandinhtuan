@@ -19,7 +19,7 @@
         @method('PUT')
         <div class="col-lg-8 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header">
+                <div class="header bg-teal">
                     <h2>Sửa bài viết</h2>
                 </div>
                 <div class="body">
@@ -55,7 +55,7 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
             <div class="card">
-                <div class="header">
+                <div class="header bg-teal">
                     <h2>Chọn thể loại</h2>
                 </div>
                 <div class="body">
@@ -93,7 +93,7 @@
                         <span>Quay lại</span>
                     </a>
 
-                    <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
+                    <button type="submit" class="btn btn-teal btn-lg m-t-15 waves-effect">
                         <i class="material-icons">update</i>
                         <span>Cập nhật</span>
                     </button>

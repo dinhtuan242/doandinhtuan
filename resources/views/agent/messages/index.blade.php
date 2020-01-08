@@ -17,16 +17,17 @@
 
                 <div class="col s12 m9">
 
-                    <h4 class="agent-title">MESSAGES</h4>
+                    <h4 class="agent-title">Lịch hẹn</h4>
                     
                     <div class="agent-content">
                         <table class="striped responsive-table">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Name</th>
+                                    <th>STT</th>
+                                    <th>Tên</th>
                                     <th>Email</th>
-                                    <th>Message</th>
+                                    <th>SĐT</th>
+                                    <th>Ghi chú</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -37,24 +38,22 @@
                                         <td class="right-align">{{$key+1}}.</td>
                                         <td>{{ ucfirst(strtok($message->name,' ')) }}</td>
                                         <td>{{ $message->email }}</td>
+                                        <td>{{ $message->phone }}</td>
                                         <td>
                                             <span class="tooltipped" data-position="bottom" data-tooltip="{{$message->message}}">
-                                                {{ str_limit($message->message,20) }}
+                                                {{ str_limit($message->message,40) }}
                                             </span>
                                         </td>
                                         <td>
                                             @if($message->status == 0)
                                                 <a href="{{route('agent.message.read',$message->id)}}" class="btn btn-small orange waves-effect">
-                                                    <i class="material-icons">local_library</i>
+                                                    <i class="material-icons">visibility</i>
                                                 </a>
                                             @else 
                                                 <a href="{{route('agent.message.read',$message->id)}}" class="btn btn-small green waves-effect">
                                                     <i class="material-icons">done</i>
                                                 </a>
                                             @endif
-                                            <a href="{{route('agent.message.replay',$message->id)}}" class="btn btn-small indigo waves-effect">
-                                                <i class="material-icons">replay</i>
-                                            </a>
                                             <button type="button" class="btn btn-small red waves-effect" onclick="deleteMessage({{$message->id}})">
                                                 <i class="material-icons">delete</i>
                                             </button>
@@ -86,18 +85,18 @@
     <script>
         function deleteMessage(id){
             swal({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Cảnh báo',
+            text: "Bạn có chắc chắn muốn xóa",
             icon: 'warning',
             buttons: true,
             dangerMode: true,
-            buttons: ["Cancel", "Yes, delete it!"]
+            buttons: ["Cancel", "OK"]
             }).then((value) => {
                 if (value) {
                     document.getElementById('del-message-'+id).submit();
                     swal(
-                    'Deleted!',
-                    'Message has been deleted.',
+                    'Xóa thành công',
+                    'Xóa lịch hẹn thành công',
                     'success',
                     {
                         buttons: false,

@@ -78,8 +78,6 @@ Route::group(['prefix' => 'agent', 'namespace' => 'Agent', 'middleware' => ['aut
 
     Route::get('message', 'DashboardController@message')->name('message');
     Route::get('message/read/{id}', 'DashboardController@messageRead')->name('message.read');
-    Route::get('message/replay/{id}', 'DashboardController@messageReplay')->name('message.replay');
-    Route::post('message/replay', 'DashboardController@messageSend')->name('message.send');
     Route::post('message/readunread', 'DashboardController@messageReadUnread')->name('message.readunread');
     Route::delete('message/delete/{id}', 'DashboardController@messageDelete')->name('messages.destroy');
     Route::post('message/mail', 'DashboardController@contactMail')->name('message.mail');

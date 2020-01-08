@@ -6,7 +6,7 @@
         <div class="col s12 m6 offset-m3">
             <div class="card">
 
-                <h4 class="center indigo-text uppercase p-t-30">{{ __('Login') }}</h4>
+                <h4 class="center teal-text uppercase p-t-30">{{ __('Login') }}</h4>
 
                 <div class="p-20">
                     <form method="POST" action="{{ route('login') }}">
@@ -47,11 +47,11 @@
 
                         <div class="row">
                             <div class="input-field col s12">
-                                <button type="submit" class="waves-effect waves-light btn indigo">
+                                <button type="submit" class="waves-effect waves-light btn teal">
                                     {{ __('Login') }}
                                 </button>
 
-                                <a class="indigo-text p-l-15" href="{{ route('password.request') }}">
+                                <a class="teal-text p-l-15" href="{{ route('password.request') }}">
                                     {{ __('Forgot Your Password?') }}
                                 </a>
                             </div>

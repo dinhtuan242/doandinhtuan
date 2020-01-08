@@ -105,7 +105,7 @@
                                             <textarea name="message" placeholder="Ghi chú"></textarea>
                                         </div>
                                         <div class="box">
-                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">
+                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 teal" type="submit">
                                                 Đặt lịch
                                                 <i class="material-icons left">send</i>
                                             </button>

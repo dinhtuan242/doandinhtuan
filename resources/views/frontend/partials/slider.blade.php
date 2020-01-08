@@ -9,9 +9,9 @@
             </div>
         @endforeach
     @else 
-        <div class="carousel-item amber indigo-text" style="background-image: url({{ asset('frontend/images/real_estate.jpg') }})" href="#1!">
+        <div class="carousel-item amber teal-text" style="background-image: url({{ asset('frontend/images/real_estate.jpg') }})" href="#1!">
             <h2>Tiêu đề</h2>
-            <p class="indigo-text">Mô tả</p>
+            <p class="teal-text">Mô tả</p>
         </div>
     @endif
 </section>

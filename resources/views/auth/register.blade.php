@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col s12 m6 offset-m3">
             <div class="card">
-                <h4 class="center indigo-text uppercase p-t-30">{{ __('Register') }}</h4>
+                <h4 class="center teal-text uppercase p-t-30">{{ __('Register') }}</h4>
 
                 <div class="p-20">
                     <form method="POST" action="{{ route('register') }}">
@@ -66,7 +66,7 @@
                         
                         <div class="row">
                             <div class="input-field col s12">
-                                <button type="submit" class="waves-effect waves-light btn indigo">
+                                <button type="submit" class="waves-effect waves-light btn teal">
                                     {{ __('Register') }}
                                 </button>
                             </div>

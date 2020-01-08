@@ -6,7 +6,7 @@
     <section class="section">
         <div class="container">
             <div class="row">
-                <h4 class="section-heading">Featured Properties</h4>
+                <h4 class="section-heading">Danh sách tài sản</h4>
             </div>
             <div class="row">
 
@@ -20,7 +20,7 @@
                                     <span class="card-image-bg"><span>
                                 @endif
                                 @if($property->featured == 1)
-                                    <a class="btn-floating halfway-fab waves-effect waves-light indigo" title="Featured"><i class="small material-icons">star</i></a>
+                                    <a class="btn-floating halfway-fab waves-effect waves-light teal" title="Featured"><i class="small material-icons">star</i></a>
                                 @endif
                             </div>
                             <div class="card-content property-content">
@@ -42,22 +42,22 @@
                                 </div>
 
                                 <h5>
-                                    &dollar;{{ $property->price }}
+                                    {{ $property->price }} triệu đồng
                                     <div class="right" id="propertyrating-{{$property->id}}"></div>
                                 </h5>
                             </div>
                             <div class="card-action property-action">
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Bedroom: <strong>{{ $property->bedroom}}</strong> 
+                                    Phòng ngủ: <strong>{{ $property->bedroom}}</strong> 
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Bathroom: <strong>{{ $property->bathroom}}</strong> 
+                                    Phòng tắm: <strong>{{ $property->bathroom}}</strong> 
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">check_box</i>
-                                    Area: <strong>{{ $property->area}}</strong> Square Feet
+                                    Diện tích: <strong>{{ $property->area}}</strong> mét vuông
                                 </span>
                                 <span class="btn-flat">
                                     <i class="material-icons">comment</i> 
@@ -78,7 +78,7 @@
     <section class="section grey lighten-3 center">
         <div class="container">
 
-            <h4 class="section-heading">Testimonials</h4>
+            <h4 class="section-heading">Ý kiến khách hàng</h4>
 
             <div class="carousel testimonials">
 
@@ -110,7 +110,7 @@
 
     <section class="section center">
         <div class="row">
-            <h4 class="section-heading">Recent Blog</h4>
+            <h4 class="section-heading">Tin tức</h4>
         </div>
         <div class="container">
             <div class="row">

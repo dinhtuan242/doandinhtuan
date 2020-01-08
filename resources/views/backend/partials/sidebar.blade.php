@@ -72,19 +72,9 @@
                         <span>Cài đặt cá nhân</span>
                     </a>
                     <ul class="ml-menu">
-                        <li class="{{ Request::is('admin/settings') ? 'active' : '' }}">
-                            <a href="{{ route('admin.settings') }}">
-                                <span>Cài đặt</span>
-                            </a>
-                        </li>
                         <li class="{{ Request::is('admin/changepassword') ? 'active' : '' }}">
                             <a href="{{ route('admin.changepassword') }}">
                                 <span>Đổi mật khẩu</span>
-                            </a>
-                        </li>
-                        <li class="{{ Request::is('admin/profile') ? 'active' : '' }}">
-                            <a href="{{ route('admin.profile') }}">
-                                <span>Thông tin cá nhân</span>
                             </a>
                         </li>
                     </ul>

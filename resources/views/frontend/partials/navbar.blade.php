@@ -1,5 +1,5 @@
 <div class="navbar-fixed">
-    <nav class="indigo darken-4">
+    <nav class="teal darken-4">
         <div class="container">
             <div class="nav-wrapper">
 
@@ -46,21 +46,21 @@
                         <ul id="dropdown-auth-frontend" class="dropdown-content">
                             <li>
                                 @if(Auth::user()->role->id == 1)
-                                    <a href="{{ route('admin.dashboard') }}" class="indigo-text">
+                                    <a href="{{ route('admin.dashboard') }}" class="teal-text">
                                         <i class="material-icons">person</i>Thông tin
                                     </a>
                                 @elseif(Auth::user()->role->id == 2)
-                                    <a href="{{ route('agent.dashboard') }}" class="indigo-text">
+                                    <a href="{{ route('agent.dashboard') }}" class="teal-text">
                                         <i class="material-icons">person</i>Thông tin
                                     </a>
                                 @elseif(Auth::user()->role->id == 3)
-                                    <a href="{{ route('user.dashboard') }}" class="indigo-text">
+                                    <a href="{{ route('user.dashboard') }}" class="teal-text">
                                         <i class="material-icons">person</i>Thông tin
                                     </a>
                                 @endif
                             </li>
                             <li>
-                                <a class="dropdownitem indigo-text" href="{{ route('logout') }}"
+                                <a class="dropdownitem teal-text" href="{{ route('logout') }}"
                                     onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();">
                                     <i class="material-icons">power_settings_new</i>{{ __('Logout') }}

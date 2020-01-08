@@ -15,7 +15,7 @@
 
         <div class="col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>
                         Cài đặt cơ bản
                     </h2>
@@ -76,7 +76,7 @@
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-indigo btn-lg m-t-15 waves-effect">
+                        <button type="submit" class="btn btn-teal btn-lg m-t-15 waves-effect">
                             <i class="material-icons">save</i>
                             <span>Lưu thay đổi</span>
                         </button>

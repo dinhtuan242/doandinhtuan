@@ -41,7 +41,7 @@
                                 <label for="new-password_confirmation">Confirm New Password</label>
                             </div>
 
-                            <button class="btn waves-effect waves-light indigo darken-4 m-l-30" type="submit">
+                            <button class="btn waves-effect waves-light teal darken-4 m-l-30" type="submit">
                                 Submit
                                 <i class="material-icons right">send</i>
                             </button>

@@ -215,7 +215,7 @@
                                         <input type="hidden" name="parent" value="0">
 
                                         <textarea name="body" class="box"></textarea>
-                                        <input type="submit" class="btn indigo" value="Comment">
+                                        <input type="submit" class="btn teal" value="Comment">
                                     </form>
                                 </div>
                             @endauth
@@ -223,7 +223,7 @@
                             @guest 
                                 <div class="comment-login">
                                     <h6>Vui lòng đăng nhập để bình luận</h6>
-                                    <a href="{{ route('login') }}" class="btn indigo">Đăng nhập</a>
+                                    <a href="{{ route('login') }}" class="btn teal">Đăng nhập</a>
                                 </div>
                             @endguest
                             
@@ -281,7 +281,7 @@
                                             <textarea name="message" placeholder="Ghi chú""></textarea>
                                         </div>
                                         <div class="box">
-                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 indigo" type="submit">
+                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 teal" type="submit">
                                                 Đặt lịch
                                                 <i class="material-icons left">send</i>
                                             </button>
@@ -321,7 +321,7 @@
                                                 </div>
                                                 @endif
                                                 <div class="card-stacked">
-                                                    <div class="p-l-10 p-r-10 indigo-text">
+                                                    <div class="p-l-10 p-r-10 teal-text">
                                                         <h6 title="{{$property_related->title}}">{{ str_limit( $property_related->title, 18 ) }}</h6>
                                                         <strong>&dollar;{{$property_related->price}}</strong>
                                                     </div>
@@ -392,7 +392,7 @@
                             <input type="hidden" name="parent_id" value="`+commentid+`">
                             
                             <textarea name="body" class="box" placeholder="Để lại bình luận""></textarea>
-                            <input type="submit" class="btn indigo" value="Bình luận">
+                            <input type="submit" class="btn teal" value="Bình luận">
                         </form>
                     </div>`
                 );

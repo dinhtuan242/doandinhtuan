@@ -17,19 +17,19 @@
 
                 <div class="col s12 m9">
 
-                    <h4 class="agent-title">PROPERTY LIST</h4>
+                    <h4 class="agent-title">Danh sách tài sản</h4>
                     
                     <div class="agent-content">
                         <table class="striped responsive-table">
                             <thead>
                                 <tr>
-                                    <th>SL.</th>
-                                    <th>Title</th>
-                                    <th>Type</th>
-                                    <th>City</th>
+                                    <th>STT.</th>
+                                    <th>Tên</th>
+                                    <th>Loại tài sản</th>
+                                    <th>Thành phố</th>
                                     <th><i class="material-icons small-star p-t-10">comment</i></th>
                                     <th><i class="material-icons small-star p-t-10">stars</i></th>
-                                    <th>Action</th>
+                                    <th>Hành động</th>
                                 </tr>
                             </thead>
                     
@@ -43,7 +43,7 @@
                                             </span>
                                         </td>
                                         
-                                        <td>{{ ucfirst($property->type) }}</td>
+                                        <td>{{ ucfirst($property->type == 'house' ? 'Nhà' : 'Căn hộ') }}</td>
                                         <td>{{ ucfirst($property->city) }}</td>
 
                                         <td class="center">
@@ -52,7 +52,7 @@
 
                                         <td class="center">
                                             @if($property->featured == true)
-                                                <span class="indigo-text"><i class="material-icons small-star">stars</i></span>
+                                                <span class="teal-text"><i class="material-icons small-star">stars</i></span>
                                             @endif
                                         </td>
     
@@ -92,18 +92,18 @@
     <script>
         function deleteProperty(id){
             swal({
-            title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            title: 'Cảnh báo',
+            text: "Bạn có chắc chắn muốn xóa?",
             icon: 'warning',
             buttons: true,
             dangerMode: true,
-            buttons: ["Cancel", "Yes, delete it!"]
+            buttons: ["Cancel", "Ok"]
             }).then((value) => {
                 if (value) {
                     document.getElementById('del-property-'+id).submit();
                     swal(
-                    'Deleted!',
-                    'Property has been deleted.',
+                    'Xóa thành công',
+                    'Đã xóa tài sản thành công',
                     'success',
                     {
                         buttons: false,

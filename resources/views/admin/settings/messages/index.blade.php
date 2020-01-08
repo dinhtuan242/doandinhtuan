@@ -15,7 +15,7 @@
 
         <div class="col-xs-12">
             <div class="card">
-                <div class="header bg-indigo">
+                <div class="header bg-teal">
                     <h2>Danh sách lịch hẹn</h2>
                 </div>
                 <div class="body">

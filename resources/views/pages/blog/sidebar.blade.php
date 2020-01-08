@@ -4,7 +4,7 @@
         <ul class="collection">
             @foreach($popularposts as $post)
                 <li class="collection-item">
-                    <a href="{{ route('blog.show',$post->slug) }}" class="indigo-text text-darken-4">
+                    <a href="{{ route('blog.show',$post->slug) }}" class="teal-text text-darken-4">
                         <span class="truncate tooltipped" data-position="bottom" data-tooltip="{{ $post->title }}">{{ $post->title }}</span>
                     </a>
                 </li>
@@ -37,7 +37,7 @@
         <h3 class="font-18 m-t-0 bold uppercase">Tags</h3>
         @foreach($tags as $tag)
             <a href="{{ route('blog.tags',$tag->slug) }}">
-                <span class="btn-small indigo white-text m-b-5 card-no-shadow">{{ $tag->name }}</span>
+                <span class="btn-small teal white-text m-b-5 card-no-shadow">{{ $tag->name }}</span>
             </a>
         @endforeach
     </div>

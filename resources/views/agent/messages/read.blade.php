@@ -17,22 +17,17 @@
 
                 <div class="col s12 m9">
 
-                    <h4 class="agent-title">READ MESSAGES</h4>
+                    <h4 class="agent-title">Chi tiết lịch hẹn</h4>
                     
                     <div class="agent-content">
                         
-                        <span><strong>From:</strong> <em>{{ $message->name }} < {{ $message->email }} ></em></span> <br>
-                        <span><strong>Phone:</strong> {{ $message->phone }}</span>
+                        <span><strong>Từ:</strong> <em>{{ $message->name }} < {{ $message->email }} ></em></span> <br>
+                        <span><strong>Số điện thoại:</strong> {{ $message->phone }}</span>
 
                         <div class="read-message">
-                            <span>Message:</span>
+                            <span>Ghi chú:</span>
                             <p>{!! $message->message !!}</p>
                         </div>
-
-                        <a href="{{route('agent.message.replay',$message->id)}}" class="btn btn-small indigo waves-effect">
-                            <i class="material-icons left">replay</i>
-                            <span>Replay</span>
-                        </a>
 
                         <form class="right" action="{{route('agent.message.readunread')}}" method="POST">
                             @csrf
@@ -40,11 +35,12 @@
                             <input type="hidden" name="messageid" value="{{ $message->id }}">
 
                             <button type="submit" class="btn btn-small orange waves-effect">
-                                <i class="material-icons left">local_library</i>
                                 @if($message->status)
-                                    <span>Unread</span>
+                                    <i class="material-icons left">close</i>
+                                    <span>Chưa hoàn thành</span>
                                 @else 
-                                    <span>Read</span>
+                                    <i class="material-icons left">check</i>
+                                    <span>Đã hoàn thành</span>
                                 @endif
                             </button>
                         </form>

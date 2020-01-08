@@ -1,16 +1,16 @@
-<footer class="page-footer indigo darken-2">
+<footer class="page-footer teal darken-2">
     <div class="container">
         <div class="row">
             <div class="col m4 s12">
-                <h5 class="white-text uppercase">About Us</h5>
+                <h5 class="white-text uppercase">Về chúng tôi</h5>
                 @if(isset($footersettings[0]) && $footersettings[0]['aboutus'])
                     <p class="grey-text text-lighten-4">{{ $footersettings[0]['aboutus'] }}</p>
                 @else
-                    <p class="grey-text text-lighten-4">Real estate company description goes here.</p>
+                    <p class="grey-text text-lighten-4">Thông tin về bất động sản Rent and sale.</p>
                 @endif
             </div>
             <div class="col m6 s12">
-                <h5 class="white-text uppercase">Recent Properties</h5>
+                <h5 class="white-text uppercase">Tài sản nổi bật</h5>
                 <ul class="collection border0">
 
                     @foreach($footerproperties as $property)
@@ -20,7 +20,7 @@
                             <h5 class="font-18 m-b-0 m-t-5">
                                 <a href="{{ route('property.show',$property->slug) }}" class="white-text">{{ str_limit($property->title,40) }}</a>
                             </h5>
-                            <p class="m-t-0 m-b-5 grey-text text-lighten-1">Bedroom: {{ $property->bedroom }} Bathroom: {{ $property->bathroom }} </p>
+                            <p class="m-t-0 m-b-5 grey-text text-lighten-1">Phòng ngủ: {{ $property->bedroom }} Phòng tắm: {{ $property->bathroom }} </p>
                         </div>
                     </li>
                     @endforeach
@@ -28,26 +28,18 @@
                 </ul>
             </div>
             <div class="col m2 s12">
-                <h5 class="white-text uppercase">Menu</h5>
+                <h5 class="white-text uppercase">Danh mục</h5>
                 <ul>
                     <li class="uppercase {{ Request::is('property*') ? 'underline' : '' }}">
-                        <a href="{{ route('property') }}" class="grey-text text-lighten-3">Properties</a>
+                        <a href="{{ route('property') }}" class="grey-text text-lighten-3">Tài sản</a>
                     </li>
 
                     <li class="uppercase {{ Request::is('agents*') ? 'underline' : '' }}">
-                        <a href="{{ route('agents') }}" class="grey-text text-lighten-3">Agents</a>
-                    </li>
-
-                    <li class="uppercase {{ Request::is('gallery*') ? 'underline' : '' }}">
-                        <a href="{{ route('gallery') }}" class="grey-text text-lighten-3">Gallery</a>
+                        <a href="{{ route('agents') }}" class="grey-text text-lighten-3">Chủ nhà</a>
                     </li>
 
                     <li class="uppercase {{ Request::is('blog*') ? 'underline' : '' }}">
-                        <a href="{{ route('blog') }}" class="grey-text text-lighten-3">Blog</a>
-                    </li>
-
-                    <li class="uppercase {{ Request::is('contact') ? 'underline' : '' }}">
-                        <a href="{{ route('contact') }}" class="grey-text text-lighten-3">Contact</a>
+                        <a href="{{ route('blog') }}" class="grey-text text-lighten-3">Tin tức</a>
                     </li>
                 </ul>
             </div>
@@ -58,17 +50,17 @@
             @if(isset($footersettings[0]) && $footersettings[0]['footer'])
                 {{ $footersettings[0]['footer'] }}
             @else
-                © 2018 Developer Canvas Studio.
+                © 2020 Rent and sale.
             @endif
 
             @if(isset($footersettings[0]) && $footersettings[0]['facebook'])
-                <a class="grey-text text-lighten-4 right" href="{{ $footersettings[0]['facebook'] }}" target="_blank">FACEBOOK</a>
+                <a class="grey-text text-lighten-4 right" href="{{ $footersettings[0]['facebook'] }}" target="_blank">Facebook</a>
             @endif
             @if(isset($footersettings[0]) && $footersettings[0]['twitter'])
-                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['twitter'] }}" target="_blank">TWITTER</a>
+                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['twitter'] }}" target="_blank">Twitter</a>
             @endif
             @if(isset($footersettings[0]) && $footersettings[0]['linkedin'])
-                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['linkedin'] }}" target="_blank">LINKEDIN</a>
+                <a class="grey-text text-lighten-4 right m-r-10" href="{{ $footersettings[0]['linkedin'] }}" target="_blank">Linkedin</a>
             @endif
 
         </div>

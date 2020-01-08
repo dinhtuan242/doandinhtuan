@@ -112,7 +112,7 @@
                                         <input type="hidden" name="parent" value="0">
 
                                         <textarea name="body" class="box"></textarea>
-                                        <input type="submit" class="btn indigo" value="Comment">
+                                        <input type="submit" class="btn teal" value="Comment">
                                     </form>
                                 </div>
                             @endauth
@@ -120,7 +120,7 @@
                             @guest 
                                 <div class="comment-login">
                                     <h6>Vui lòng đăng nhập để bình luận</h6>
-                                    <a href="{{ route('login') }}" class="btn indigo">Đăng nhập</a>
+                                    <a href="{{ route('login') }}" class="btn teal">Đăng nhập</a>
                                 </div>
                             @endguest
                             
@@ -156,7 +156,7 @@
                     <input type="hidden" name="parent_id" value="`+commentid+`">
                     
                     <textarea name="body" class="box" placeholder="Leave a comment"></textarea>
-                    <input type="submit" class="btn indigo" value="Comment">
+                    <input type="submit" class="btn teal" value="Comment">
                 </form>
             </div>`
         );

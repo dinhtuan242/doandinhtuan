@@ -33,17 +33,6 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box bg-teal hover-expand-effect">
-                <div class="icon">
-                    <i class="material-icons">forum</i>
-                </div>
-                <div class="content">
-                    <div class="text">TỔNG SỐ COMMENT</div>
-                    <div class="number count-to" data-from="0" data-to="{{ $commentcount }}" data-speed="1000" data-fresh-interval="20"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
             <div class="info-box bg-orange hover-expand-effect">
                 <div class="icon">
                     <i class="material-icons">person_add</i>
@@ -117,7 +106,6 @@
                                 <tr>
                                     <th>STT</th>
                                     <th>Tên</th>
-                                    <th><i class="material-icons small">comment</i></th>
                                     <th>Tác giả</th>
                                 </tr>
                             </thead>
@@ -129,9 +117,6 @@
                                         <span title="{{ $post->title }}">
                                             {{ str_limit($post->title, 30) }}
                                         </span>
-                                    </td>
-                                    <td>
-                                        <span class="label bg-green">{{ $post->comments_count }}</span>
                                     </td>
                                     <td>{{ strtok($post->user->name, " ")}}</td>
                                 </tr>
@@ -181,49 +166,49 @@
         <!-- #END# USER LIST -->
 
         <!-- RECENT COMMENTS -->
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <div class="card">
-                <div class="header">
-                    <h2>Comment gần đây</h2>
-                </div>
-                <div class="body">
-                    <div class="table-responsive">
-                        <table class="table table-hover dashboard-task-infos">
-                            <thead>
-                                <tr>
-                                    <th>STT</th>
-                                    <th>Nội dung</th>
-                                    <th><i class="material-icons small">check</i></th>
-                                    <th>Người đăng</th>
-                                    <th>Thời gian</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($comments as $key => $comment)
-                                <tr>
-                                    <td>{{ ++$key }}.</td>
-                                    <td>
-                                        <span title="{{ $comment->body }}">
-                                            {{ str_limit($comment->body, 20) }}
-                                        </span>
-                                    </td>
-                                    <td>
-                                        @if($comment->approved == 1)
-                                            <span class="label bg-green">A</span>
-                                        @else
-                                            <span class="label bg-red">N</span>
-                                        @endif
-                                    </td>
-                                    <td>{{ strtok($comment->users->name, " ")}}</td>
-                                    <td>{{ $comment->created_at->diffForHumans() }}</td>
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
+{{--        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">--}}
+{{--            <div class="card">--}}
+{{--                <div class="header">--}}
+{{--                    <h2>Comment gần đây</h2>--}}
+{{--                </div>--}}
+{{--                <div class="body">--}}
+{{--                    <div class="table-responsive">--}}
+{{--                        <table class="table table-hover dashboard-task-infos">--}}
+{{--                            <thead>--}}
+{{--                                <tr>--}}
+{{--                                    <th>STT</th>--}}
+{{--                                    <th>Nội dung</th>--}}
+{{--                                    <th><i class="material-icons small">check</i></th>--}}
+{{--                                    <th>Người đăng</th>--}}
+{{--                                    <th>Thời gian</th>--}}
+{{--                                </tr>--}}
+{{--                            </thead>--}}
+{{--                            <tbody>--}}
+{{--                                @foreach($comments as $key => $comment)--}}
+{{--                                <tr>--}}
+{{--                                    <td>{{ ++$key }}.</td>--}}
+{{--                                    <td>--}}
+{{--                                        <span title="{{ $comment->body }}">--}}
+{{--                                            {{ str_limit($comment->body, 20) }}--}}
+{{--                                        </span>--}}
+{{--                                    </td>--}}
+{{--                                    <td>--}}
+{{--                                        @if($comment->approved == 1)--}}
+{{--                                            <span class="label bg-green">A</span>--}}
+{{--                                        @else--}}
+{{--                                            <span class="label bg-red">N</span>--}}
+{{--                                        @endif--}}
+{{--                                    </td>--}}
+{{--                                    <td>{{ strtok($comment->users->name, " ")}}</td>--}}
+{{--                                    <td>{{ $comment->created_at->diffForHumans() }}</td>--}}
+{{--                                </tr>--}}
+{{--                                @endforeach--}}
+{{--                            </tbody>--}}
+{{--                        </table>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+{{--        </div>--}}
         <!-- #END# RECENT COMMENTS -->
     </div>
 

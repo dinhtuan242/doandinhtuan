@@ -53,76 +53,76 @@
                     </div>
 
                     <div class="card" id="comments">
-                        <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">{{ $post->comments_count }} Bình luận</h5>
-                        </div>
+{{--                        <div class="p-15 grey lighten-4">--}}
+{{--                            <h5 class="m-0">{{ $post->comments_count }} Bình luận</h5>--}}
+{{--                        </div>--}}
                         <div class="single-narebay p-15">
 
-                            @foreach($post->comments as $comment)
+{{--                            @foreach($post->comments as $comment)--}}
 
-                                @if($comment->parent_id == null)
-                                    <div class="comment">
-                                        <div class="author-image">
-                                            <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>
-                                        </div>
-                                        <div class="content">
-                                            <div class="author-name">
-                                                <strong>{{ $comment->users->name }}</strong>
-                                                <span class="time">{{ $comment->created_at->diffForHumans() }}</span>
+{{--                                @if($comment->parent_id == null)--}}
+{{--                                    <div class="comment">--}}
+{{--                                        <div class="author-image">--}}
+{{--                                            <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content">--}}
+{{--                                            <div class="author-name">--}}
+{{--                                                <strong>{{ $comment->users->name }}</strong>--}}
+{{--                                                <span class="time">{{ $comment->created_at->diffForHumans() }}</span>--}}
 
-                                                @auth
-                                                    <span class="right replay" data-commentid="{{ $comment->id }}">Trả lời</span>
-                                                @endauth
+{{--                                                @auth--}}
+{{--                                                    <span class="right replay" data-commentid="{{ $comment->id }}">Trả lời</span>--}}
+{{--                                                @endauth--}}
 
-                                            </div>
-                                            <div class="author-comment">
-                                                {{ $comment->body }}
-                                            </div>
-                                        </div>
-                                        <div id="comment-{{$comment->id}}"></div>
-                                    </div>
-                                @endif
+{{--                                            </div>--}}
+{{--                                            <div class="author-comment">--}}
+{{--                                                {{ $comment->body }}--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div id="comment-{{$comment->id}}"></div>--}}
+{{--                                    </div>--}}
+{{--                                @endif--}}
 
-                                @if($comment->children->count() > 0)
-                                    @foreach($comment->children as $comment)
-                                        <div class="comment children">
-                                            <div class="author-image">
-                                                <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>
-                                            </div>
-                                            <div class="content">
-                                                <div class="author-name">
-                                                    <strong>{{ $comment->users->name }}</strong>
-                                                    <span class="time">{{ $comment->created_at->diffForHumans() }}</span>
-                                                </div>
-                                                <div class="author-comment">
-                                                    {{ $comment->body }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                @endif
+{{--                                @if($comment->children->count() > 0)--}}
+{{--                                    @foreach($comment->children as $comment)--}}
+{{--                                        <div class="comment children">--}}
+{{--                                            <div class="author-image">--}}
+{{--                                                <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="content">--}}
+{{--                                                <div class="author-name">--}}
+{{--                                                    <strong>{{ $comment->users->name }}</strong>--}}
+{{--                                                    <span class="time">{{ $comment->created_at->diffForHumans() }}</span>--}}
+{{--                                                </div>--}}
+{{--                                                <div class="author-comment">--}}
+{{--                                                    {{ $comment->body }}--}}
+{{--                                                </div>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    @endforeach--}}
+{{--                                @endif--}}
 
-                            @endforeach
+{{--                            @endforeach--}}
 
-                            @auth
-                                <div class="comment-box">
-                                    <h6>Để lại bình luận</h6>
-                                    <form action="{{ route('blog.comment',$post->id) }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="parent" value="0">
+{{--                            @auth--}}
+{{--                                <div class="comment-box">--}}
+{{--                                    <h6>Để lại bình luận</h6>--}}
+{{--                                    <form action="{{ route('blog.comment',$post->id) }}" method="POST">--}}
+{{--                                        @csrf--}}
+{{--                                        <input type="hidden" name="parent" value="0">--}}
 
-                                        <textarea name="body" class="box"></textarea>
-                                        <input type="submit" class="btn teal" value="Comment">
-                                    </form>
-                                </div>
-                            @endauth
+{{--                                        <textarea name="body" class="box"></textarea>--}}
+{{--                                        <input type="submit" class="btn teal" value="Comment">--}}
+{{--                                    </form>--}}
+{{--                                </div>--}}
+{{--                            @endauth--}}
 
-                            @guest 
-                                <div class="comment-login">
-                                    <h6>Vui lòng đăng nhập để bình luận</h6>
-                                    <a href="{{ route('login') }}" class="btn teal">Đăng nhập</a>
-                                </div>
-                            @endguest
+{{--                            @guest--}}
+{{--                                <div class="comment-login">--}}
+{{--                                    <h6>Vui lòng đăng nhập để bình luận</h6>--}}
+{{--                                    <a href="{{ route('login') }}" class="btn teal">Đăng nhập</a>--}}
+{{--                                </div>--}}
+{{--                            @endguest--}}
                             
                         </div>
                     </div>

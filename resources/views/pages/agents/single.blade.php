@@ -82,37 +82,37 @@
                     <div class="clearfix">
 
                         <div>
-                            <ul class="collection with-header m-t-0">
-                                <li class="collection-header grey lighten-4">
-                                    <h5 class="m-0">Đặt lịch hẹn với chủ nhà</h5>
-                                </li>
-                                <li class="collection agent-message">
-                                    <form class="agent-message-box" action="" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="agent_id" value="{{ $agent->id }}">
-                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                            
-                                        <div class="box">
-                                            <input type="text" name="name" placeholder="Tên của bạn"">
-                                        </div>
-                                        <div class="box">
-                                            <input type="email" name="email" placeholder="Email">
-                                        </div>
-                                        <div class="box">
-                                            <input type="number" name="phone" placeholder="Điện thoại">
-                                        </div>
-                                        <div class="box">
-                                            <textarea name="message" placeholder="Ghi chú"></textarea>
-                                        </div>
-                                        <div class="box">
-                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 teal" type="submit">
-                                                Đặt lịch
-                                                <i class="material-icons left">send</i>
-                                            </button>
-                                        </div>
-                                    </form>
-                                </li>
-                            </ul>
+{{--                            <ul class="collection with-header m-t-0">--}}
+{{--                                <li class="collection-header grey lighten-4">--}}
+{{--                                    <h5 class="m-0">Đặt lịch hẹn với chủ nhà</h5>--}}
+{{--                                </li>--}}
+{{--                                <li class="collection agent-message">--}}
+{{--                                    <form class="agent-message-box" action="" method="POST">--}}
+{{--                                        @csrf--}}
+{{--                                        <input type="hidden" name="agent_id" value="{{ $agent->id }}">--}}
+{{--                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">--}}
+{{--                                            --}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="text" name="name" placeholder="Tên của bạn"">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="email" name="email" placeholder="Email">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <input type="number" name="phone" placeholder="Điện thoại">--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <textarea name="message" placeholder="Ghi chú"></textarea>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="box">--}}
+{{--                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 teal" type="submit">--}}
+{{--                                                Đặt lịch--}}
+{{--                                                <i class="material-icons left">send</i>--}}
+{{--                                            </button>--}}
+{{--                                        </div>--}}
+{{--                                    </form>--}}
+{{--                                </li>--}}
+{{--                            </ul>--}}
                         </div>
 
                     </div>

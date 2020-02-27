@@ -153,79 +153,79 @@
                     </div>
 
                     <div class="card-no-box-shadow card">
-                        <div class="p-15 grey lighten-4">
-                            <h5 class="m-0">
-                                {{ $property->comments_count }} Bình luận
-                                @auth
-                                <div class="right" id="rateYo"></div>
-                                @endauth
-                            </h5>
-                        </div>
+{{--                        <div class="p-15 grey lighten-4">--}}
+{{--                            <h5 class="m-0">--}}
+{{--                                {{ $property->comments_count }} Bình luận--}}
+{{--                                @auth--}}
+{{--                                <div class="right" id="rateYo"></div>--}}
+{{--                                @endauth--}}
+{{--                            </h5>--}}
+{{--                        </div>--}}
                         <div class="single-narebay p-15">
 
-                            @foreach($property->comments as $comment)
+{{--                            @foreach($property->comments as $comment)--}}
 
-                                @if($comment->parent_id == NULL)
-                                    <div class="comment">
-                                        <div class="author-image">
-                                            <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>
-                                        </div>
-                                        <div class="content">
-                                            <div class="author-name">
-                                                <strong>{{ $comment->users->name }}</strong>
-                                                <span class="time">{{ $comment->created_at->diffForHumans() }}</span>
+{{--                                @if($comment->parent_id == NULL)--}}
+{{--                                    <div class="comment">--}}
+{{--                                        <div class="author-image">--}}
+{{--                                            <span style="background-image:url({{ Storage::url('users/'.$comment->users->image) }});"></span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content">--}}
+{{--                                            <div class="author-name">--}}
+{{--                                                <strong>{{ $comment->users->name }}</strong>--}}
+{{--                                                <span class="time">{{ $comment->created_at->diffForHumans() }}</span>--}}
 
-                                                @auth
-                                                    <span id="commentreplay" class="right replay" data-commentid="{{ $comment->id }}">Trả lời</span>
-                                                @endauth
+{{--                                                @auth--}}
+{{--                                                    <span id="commentreplay" class="right replay" data-commentid="{{ $comment->id }}">Trả lời</span>--}}
+{{--                                                @endauth--}}
 
-                                            </div>
-                                            <div class="author-comment">
-                                                {{ $comment->body }}
-                                            </div>
-                                        </div>
-                                        <div id="procomment-{{$comment->id}}"></div>
-                                    </div>
-                                @endif
+{{--                                            </div>--}}
+{{--                                            <div class="author-comment">--}}
+{{--                                                {{ $comment->body }}--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                        <div id="procomment-{{$comment->id}}"></div>--}}
+{{--                                    </div>--}}
+{{--                                @endif--}}
 
-                                @foreach($comment->children as $commentchildren)
-                                    <div class="comment children">
-                                        <div class="author-image">
-                                            <span style="background-image:url({{ Storage::url('users/'.$commentchildren->users->image) }});"></span>
-                                        </div>
-                                        <div class="content">
-                                            <div class="author-name">
-                                                <strong>{{ $commentchildren->users->name }}</strong>
-                                                <span class="time">{{ $commentchildren->created_at->diffForHumans() }}</span>
-                                            </div>
-                                            <div class="author-comment">
-                                                {{ $commentchildren->body }}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
+{{--                                @foreach($comment->children as $commentchildren)--}}
+{{--                                    <div class="comment children">--}}
+{{--                                        <div class="author-image">--}}
+{{--                                            <span style="background-image:url({{ Storage::url('users/'.$commentchildren->users->image) }});"></span>--}}
+{{--                                        </div>--}}
+{{--                                        <div class="content">--}}
+{{--                                            <div class="author-name">--}}
+{{--                                                <strong>{{ $commentchildren->users->name }}</strong>--}}
+{{--                                                <span class="time">{{ $commentchildren->created_at->diffForHumans() }}</span>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="author-comment">--}}
+{{--                                                {{ $commentchildren->body }}--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
 
-                            @endforeach
+{{--                            @endforeach--}}
 
-                            @auth
-                                <div class="comment-box">
-                                    <h6>Để lại bình luận</h6>
-                                    <form action="{{ route('property.comment',$property->id) }}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="parent" value="0">
+{{--                            @auth--}}
+{{--                                <div class="comment-box">--}}
+{{--                                    <h6>Để lại bình luận</h6>--}}
+{{--                                    <form action="{{ route('property.comment',$property->id) }}" method="POST">--}}
+{{--                                        @csrf--}}
+{{--                                        <input type="hidden" name="parent" value="0">--}}
 
-                                        <textarea name="body" class="box"></textarea>
-                                        <input type="submit" class="btn teal" value="Comment">
-                                    </form>
-                                </div>
-                            @endauth
+{{--                                        <textarea name="body" class="box"></textarea>--}}
+{{--                                        <input type="submit" class="btn teal" value="Comment">--}}
+{{--                                    </form>--}}
+{{--                                </div>--}}
+{{--                            @endauth--}}
 
-                            @guest 
-                                <div class="comment-login">
-                                    <h6>Vui lòng đăng nhập để bình luận</h6>
-                                    <a href="{{ route('login') }}" class="btn teal">Đăng nhập</a>
-                                </div>
-                            @endguest
+{{--                            @guest --}}
+{{--                                <div class="comment-login">--}}
+{{--                                    <h6>Vui lòng đăng nhập để bình luận</h6>--}}
+{{--                                    <a href="{{ route('login') }}" class="btn teal">Đăng nhập</a>--}}
+{{--                                </div>--}}
+{{--                            @endguest--}}
                             
                         </div>
                     </div>
@@ -262,31 +262,38 @@
                                 </li>
 
                                 <li class="collection agent-message">
-                                    <form class="agent-message-box" action="" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="agent_id" value="{{ $property->user->id }}">
-                                        <input type="hidden" name="user_id" value="{{ auth()->id() }}">
-                                        <input type="hidden" name="property_id" value="{{ $property->id }}">
-                                            
-                                        <div class="box">
-                                            <input type="text" name="name" placeholder="Họ tên"">
-                                        </div>
-                                        <div class="box">
-                                            <input type="email" name="email" placeholder="Email">
-                                        </div>
-                                        <div class="box">
-                                            <input type="number" name="phone" placeholder="Điện thoại"">
-                                        </div>
-                                        <div class="box">
-                                            <textarea name="message" placeholder="Ghi chú""></textarea>
-                                        </div>
-                                        <div class="box">
-                                            <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 teal" type="submit">
-                                                Đặt lịch
-                                                <i class="material-icons left">send</i>
-                                            </button>
-                                        </div>
-                                    </form>
+                                    @guest()
+                                        <span class="agent-message-box">
+                                            Bạn vui lòng đăng nhập để đặt lịch hẹn
+                                        </span>
+                                    @endguest
+                                    @auth()
+                                        <form class="agent-message-box" action="" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="agent_id" value="{{ $property->user->id }}">
+                                            <input type="hidden" name="user_id" value="{{ auth()->id() }}">
+                                            <input type="hidden" name="property_id" value="{{ $property->id }}">
+
+                                            <div class="box">
+                                                <input type="text" name="name" placeholder="Họ tên"">
+                                            </div>
+                                            <div class="box">
+                                                <input type="email" name="email" placeholder="Email">
+                                            </div>
+                                            <div class="box">
+                                                <input type="number" name="phone" placeholder="Điện thoại"">
+                                            </div>
+                                            <div class="box">
+                                                <textarea name="message" placeholder="Ghi chú""></textarea>
+                                            </div>
+                                            <div class="box">
+                                                <button id="msgsubmitbtn" class="btn waves-effect waves-light w100 teal" type="submit">
+                                                    Đặt lịch
+                                                    <i class="material-icons left">send</i>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    @endauth
                                 </li>
                             </ul>
                         </div>

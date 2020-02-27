@@ -41,15 +41,12 @@
                         <input type="hidden" name="status" value="{{ $message->status }}">
                         <input type="hidden" name="messageid" value="{{ $message->id }}">
 
+                        @if(!$message->status)
                         <button type="submit" class="btn btn-warning btn-sm waves-effect">
-                            @if($message->status)
-                                <i class="material-icons">close</i>
-                                <span>Chưa hoàn thành</span>
-                            @else 
                                 <i class="material-icons">done</i>
                                 <span>Đã hoàn thành</span>
-                            @endif
                         </button>
+                        @endif
                     </form>
 
                 </div>

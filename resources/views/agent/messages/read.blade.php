@@ -22,8 +22,8 @@
                     <div class="agent-content">
                         
                         <span><strong>Từ:</strong> <em>{{ $message->name }} < {{ $message->email }} ></em></span> <br>
-                        <span><strong>Số điện thoại:</strong> {{ $message->phone }}</span>
-
+                        <span><strong>Số điện thoại:</strong> {{ $message->phone }}</span><br/>
+                        <span><strong>Thời gian gửi:</strong> {{ date_format($message->created_at, 'h:m:s d-m-Y') }}</span>
                         <div class="read-message">
                             <span>Ghi chú:</span>
                             <p>{!! $message->message !!}</p>
@@ -34,15 +34,12 @@
                             <input type="hidden" name="status" value="{{ $message->status }}">
                             <input type="hidden" name="messageid" value="{{ $message->id }}">
 
+                            @if(!$message->status)
                             <button type="submit" class="btn btn-small orange waves-effect">
-                                @if($message->status)
-                                    <i class="material-icons left">close</i>
-                                    <span>Chưa hoàn thành</span>
-                                @else 
                                     <i class="material-icons left">check</i>
                                     <span>Đã hoàn thành</span>
-                                @endif
                             </button>
+                            @endif
                         </form>
 
                     </div>

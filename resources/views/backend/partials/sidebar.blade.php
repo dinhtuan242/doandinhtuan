@@ -66,7 +66,7 @@
                     </a>
                 </li>
  
-                <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}">
+                {{-- <li class="{{ Request::is('admin/settings*') ? 'active' : '' }}">
                     <a href="javascript:void(0);" class="menu-toggle">
                         <i class="material-icons">settings</i>
                         <span>Cài đặt cá nhân</span>
@@ -78,7 +78,7 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li> --}}
             </ul>
         </div>
         <!-- #Menu -->

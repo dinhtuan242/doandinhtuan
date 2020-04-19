@@ -41,8 +41,8 @@ class SliderController extends Controller
             if (!Storage::disk('public')->exists('slider')) {
                 Storage::disk('public')->makeDirectory('slider');
             }
-            $slider = Image::make($image)->resize(1600, 480)->save();
-            Storage::disk('public')->put('slider/' . $imagename, $slider);
+            // $slider = Image::make($image)->resize(1600, 480)->save();
+            Storage::disk('public')->put('slider/' . $imagename, \File::get($image));
         } else {
             $imagename = 'default.png';
         }
@@ -53,7 +53,7 @@ class SliderController extends Controller
         $slider->image = $imagename;
         $slider->save();
 
-        Toastr::success('message', 'Slider created successfully.');
+        Toastr::success('message', 'Thêm banner thành công');
         return redirect()->route('admin.sliders.index');
     }
 
@@ -84,8 +84,10 @@ class SliderController extends Controller
             if (Storage::disk('public')->exists('slider/' . $slider->image)) {
                 Storage::disk('public')->delete('slider/' . $slider->image);
             }
-            $sliderimg = Image::make($image)->resize(1600, 480)->save();
-            Storage::disk('public')->put('slider/' . $imagename, $sliderimg);
+            // $sliderimg = Image::make($image)->resize(1600, 480)->save();
+            // Storage::disk('public')->put($imagename, $sliderimg);
+            // $extension = $image->getClientOriginalExtension();
+            Storage::disk('public')->put('slider/' . $imagename, \File::get($image));
         } else {
             $imagename = $slider->image;
         }
@@ -95,7 +97,7 @@ class SliderController extends Controller
         $slider->image = $imagename;
         $slider->save();
 
-        Toastr::success('message', 'Slider updated successfully.');
+        Toastr::success('message', 'Sửa banner thành công');
         return redirect()->route('admin.sliders.index');
     }
 
@@ -109,7 +111,7 @@ class SliderController extends Controller
 
         $slider->delete();
 
-        Toastr::success('message', 'Slider deleted successfully.');
+        Toastr::success('message', 'Xoá Banner thành công');
         return back();
     }
 }
